@@ -83,7 +83,7 @@
         <a href="#acceptance">1. Acceptance</a>
         <a href="#licence">2. Licence</a>
         <a href="#restrictions">3. Restrictions</a>
-        <a href="#use">4. Safe use</a>
+        <a href="#use">4. Safe use and limits</a>
         <a href="#disclaimer">5. No warranty</a>
         <a href="#liability">6. Liability</a>
         <a href="#purchases">7. Purchases</a>
@@ -150,12 +150,25 @@
           </section>
 
           <section id="use" data-reveal>
-            <h2><span class="num">04</span> Safe and sensible use</h2>
+            <h2><span class="num">04</span> Safe use and limits</h2>
             <p>{{SAFE_USE_INTRO}}</p>
             <ul>
               <li>{{SAFE_USE_1}}</li>
               <li>{{SAFE_USE_2}}</li>
               <li>{{SAFE_USE_3}}</li>
+            </ul>
+            <h3>What the App cannot do</h3>
+            <p>
+              So that there is no confusion about what you are getting, the following are limits of
+              the App, stated as part of these Terms:
+            </p>
+            <!-- AUTHOR: name every limit the app has. If a screen shows a measurement, say it is
+                 not a calibrated instrument. If the app cannot observe its own result, say so.
+                 Never let the marketing page promise something this list does not back up. -->
+            <ul>
+              <li>{{LIMIT_1}}</li>
+              <li>{{LIMIT_2}}</li>
+              <li>{{LIMIT_3}}</li>
             </ul>
             <div class="callout callout--warn">
               <p><strong>Important:</strong> {{SAFE_USE_WARNING}}</p>
@@ -202,23 +215,30 @@
           </section>
 
           <section id="purchases" data-reveal>
-            <h2><span class="num">07</span> Purchases and subscriptions</h2>
-            <p>
-              If the App offers optional in-app purchases or subscriptions, they are sold and
-              processed by Apple through your Apple Account. Prices are shown in the App before
-              purchase.
-            </p>
+            <h2><span class="num">07</span> Purchases</h2>
+            <p>{{PURCHASES_INTRO}}</p>
+            <!-- AUTHOR: keep ONLY the bullets that match this build.
+                 NO purchase at all      -> delete the whole <ul> and say so in PURCHASES_INTRO.
+                 One-time / non-consumable -> keep the one-time bullets, DELETE the two
+                                              subscription bullets. Telling a user they are on a
+                                              recurring charge when they are not is a consumer-law
+                                              problem, not a wording problem.
+                 Subscription            -> keep the subscription bullets, DELETE the one-time one,
+                                              and disclose price, period and renewal terms in the
+                                              App before purchase (Guideline 3.1.2). -->
             <ul>
-              <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period</li>
-              <li>You can manage or cancel a subscription at any time in your device's Settings under your Apple Account subscriptions</li>
-              <li>Refunds are handled by Apple under its own policies; we cannot issue refunds directly</li>
+              <li>Purchases are sold and processed by Apple through your Apple Account. The price is shown in the App, and on the App Store, before you buy</li>
+              <li>ONE-TIME ONLY — A one-time purchase does not renew and is never charged again. It can be restored on your other devices with the Restore purchases action in the App, at no extra cost</li>
+              <li>SUBSCRIPTION ONLY — A subscription renews automatically unless cancelled at least 24 hours before the end of the current period</li>
+              <li>SUBSCRIPTION ONLY — You can manage or cancel a subscription at any time in your device&rsquo;s Settings, under your Apple Account subscriptions</li>
+              <li>Refunds are handled by Apple under its own policies; we cannot issue refunds directly. Request one through <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a></li>
             </ul>
           </section>
 
           <section id="ip" data-reveal>
             <h2><span class="num">08</span> Intellectual property</h2>
             <p>
-              The App, its source code, design, user interface, icons, audio assets, name and logo
+              The App, its source code, design, user interface, icons, media assets, name and logo
               are owned by us and protected by copyright, trademark and other laws. "{{APP_NAME}}" and
               "PowerApps" are our marks. Nothing in these Terms grants you any right to use them
               without our prior written permission.
@@ -233,9 +253,9 @@
             <h2><span class="num">09</span> Privacy</h2>
             <p>
               Your use of the App is also covered by our
-              <a href="/{{APP_SLUG}}/privacy/">Privacy Policy</a>, which explains that the App does not
-              collect, transmit or sell personal data. The Privacy Policy is incorporated into these
-              Terms by reference.
+              <a href="/{{APP_SLUG}}/privacy/">Privacy Policy</a>, which explains how the App handles
+              information and which permissions it asks for. The Privacy Policy is incorporated into
+              these Terms by reference.
             </p>
           </section>
 
@@ -268,6 +288,9 @@
             </ul>
           </section>
 
+          <!-- AUTHOR: the clause below names California because Apple's own EULA does. If you
+               are established elsewhere, name your own country instead — a forum with no
+               connection to either party is the one most likely to be struck out. -->
           <section id="law" data-reveal>
             <h2><span class="num">12</span> Governing law</h2>
             <p>

@@ -37,20 +37,48 @@ That scaffolds `myapp/index.html`, `myapp/privacy/index.html` and
 `myapp/terms/index.html` from `templates/APP_SLUG/`. The script prints the
 remaining manual steps:
 
-1. Replace every `TODO` in the generated pages.
+1. Replace every `TODO` in all three generated pages — the privacy page too.
 2. Set the real App Store URL (search for `id0000000000`).
 3. Add an icon at `assets/img/myapp.svg` (64×64 viewBox, rounded square).
 4. Add a card for the app to the `#apps` grid in `index.html`.
 5. Add the three new URLs to `sitemap.xml`.
 
+…then it prints a second list, for the claims. Do not skip it. Every item there is
+a sentence that ships as a lie if you leave the default in place.
+
 ## Placeholders to replace before going live
 
 - **App Store link** — `justcleaner/index.html` still points at
   `https://apps.apple.com/app/id0000000000`.
-- **Effective dates** in the legal pages (`1 September 2026`).
-- **Governing law** in `justcleaner/terms/index.html` §12 currently names the
-  State of California and the federal laws of the United States. Change the
-  state if you would rather be governed by another one.
+- **Effective dates** in the legal pages (currently `8 September 2026`).
+- **Governing law** in `justcleaner/terms/index.html` §13 names the State of
+  California and the federal laws of the United States. Change it if you would
+  rather be governed by somewhere you are actually established.
+
+## Keeping the legal pages true
+
+The templates carry `<!-- AUTHOR: … -->` comments at every point where the text
+asserts something about the binary. They exist because this repo already shipped
+the failure once: the JustCleaner pages said the app used no microphone and
+described subscription renewal terms, months after the app had gained a
+microphone-based sound meter and a one-time non-consumable purchase.
+
+Two rules keep that from happening again.
+
+1. **The template asserts nothing it cannot know.** Anything that varies per
+   build — permissions, what is stored, whether there is a purchase, pricing,
+   accessibility, minimum iOS — is a `{{PLACEHOLDER}}` filled with a loud `TODO`.
+   An unfilled TODO is visible on the page; a wrong default is not.
+2. **When the app changes, the pages change in the same commit.** A new
+   `NS*UsageDescription` key means privacy §04 and §02 are now wrong. A new
+   StoreKit product means terms §07 and privacy §06 are now wrong. Neither will
+   fail a build or a test — only this habit catches it.
+
+Before submitting to App Review, read the privacy page next to `Info.plist` and
+next to the App Privacy answers in App Store Connect, and make the three agree.
+
+> These pages are a solid, App-Store-ready starting point, but they are not legal
+> advice. Have a lawyer look them over if the app grows.
 
 ## Support email
 
@@ -63,11 +91,6 @@ To change it, reverse the new address and update every `data-mail` value:
 ```bash
 node -e 'console.log([..."you@example.com"].reverse().join(""))'
 ```
-
-> The privacy policy and terms are a solid, App-Store-ready starting point, but
-> they are not legal advice. Read them, make sure every statement is actually
-> true of your build (no analytics SDK, no permissions, no IAP), and have a
-> lawyer look them over if the app grows.
 
 ## Deploying
 

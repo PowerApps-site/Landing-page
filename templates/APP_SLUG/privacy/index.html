@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — {{APP_NAME}} | PowerApps</title>
-<meta name="description" content="Privacy policy for the {{APP_NAME}} iOS app. {{APP_NAME}} does not collect, store or share personal data.">
+<meta name="description" content="Privacy policy for the {{APP_NAME}} iOS app.">
 <meta name="theme-color" content="#06070b">
 <link rel="canonical" href="https://powerapps.site/{{APP_SLUG}}/privacy/">
 <link rel="icon" href="/assets/img/{{APP_SLUG}}.svg" type="image/svg+xml">
 <meta property="og:title" content="Privacy Policy — {{APP_NAME}}">
-<meta property="og:description" content="{{APP_NAME}} does not collect, store or share personal data.">
+<meta property="og:description" content="How {{APP_NAME}} for iOS handles information.">
 <meta property="og:url" content="https://powerapps.site/{{APP_SLUG}}/privacy/">
 <meta property="og:image" content="https://powerapps.site/assets/img/og.svg">
 <meta name="twitter:card" content="summary_large_image">
@@ -114,11 +114,7 @@
               (the "App").
             </p>
             <div class="callout">
-              <p>
-                <strong>Short version:</strong> {{APP_NAME}} does not collect, store, transmit or sell
-                personal data. It has no user accounts, no analytics, no advertising SDKs and no
-                backend server. Everything happens locally on your device.
-              </p>
+              <p><strong>Short version:</strong> {{PRIVACY_SUMMARY}}</p>
             </div>
             <p>
               By downloading or using the App you agree to this policy. If you do not agree, please
@@ -132,15 +128,20 @@
               <strong>We collect none.</strong> The App does not ask for, gather or transmit any of
               the following:
             </p>
+            <!-- AUTHOR: DELETE any line below that is not true of THIS build. One
+                 NS*UsageDescription key in Info.plist is enough to make one of them false. -->
             <ul>
               <li>Name, email address, phone number or any other contact detail</li>
               <li>Account credentials — the App has no sign-up or login</li>
               <li>Location data, whether precise or coarse</li>
-              <li>Contacts, photos, calendar, health or microphone data</li>
+              <li>Contacts, photos, calendar or health data</li>
               <li>Device identifiers used for advertising or cross-app tracking (IDFA)</li>
               <li>Usage analytics, event logs, session recordings or heat maps</li>
               <li>Payment or financial information</li>
             </ul>
+            <p>{{PRIVACY_SENSORS}}</p>
+            <!-- AUTHOR: DELETE the paragraph below if this build links ANY third-party SDK
+                 or talks to any server of ours. -->
             <p>
               The App contains no third-party analytics, attribution, crash-reporting or advertising
               software development kits. We operate no server that receives data from the App.
@@ -153,9 +154,12 @@
               To remember your preferences between launches, the App may store a small amount of
               non-personal configuration locally using Apple's standard on-device storage:
             </p>
+            <!-- AUTHOR: one row per thing this build actually writes. Copy a row to add
+                 more, delete a row you do not use. List EVERYTHING, including files the app
+                 writes itself, not just UserDefaults. -->
             <div class="kv">
-              <div class="kv__item"><b>Preferences</b><span>Selected intensity or duration, sound settings and interface options.</span></div>
-              <div class="kv__item"><b>Onboarding state</b><span>Whether introductory screens have already been shown.</span></div>
+              <div class="kv__item"><b>Preferences</b><span>{{STORED_PREFERENCES}}</span></div>
+              <div class="kv__item"><b>{{STORED_2_LABEL}}</b><span>{{STORED_2_TEXT}}</span></div>
             </div>
             <p>
               This data never leaves your device, is not readable by us, and is removed when you
@@ -165,16 +169,15 @@
 
           <section id="permissions" data-reveal>
             <h2><span class="num">04</span> Device permissions</h2>
-            <p>
-              {{APP_NAME}} requests <strong>no system permissions</strong>. It does not use the
-              microphone, camera, location services, contacts, photo library, notifications or
-              Bluetooth. The App only plays audio through the standard iOS audio output, which
-              requires no permission prompt.
-            </p>
+            <!-- AUTHOR: this paragraph must match Info.plist exactly. Every NS*UsageDescription
+                 key in the binary is a permission you have to name here, and every one you name
+                 must also match the App Privacy answers in App Store Connect. -->
+            <p>{{PRIVACY_PERMISSIONS}}</p>
           </section>
 
           <section id="third-parties" data-reveal>
             <h2><span class="num">05</span> Third-party services</h2>
+            <!-- AUTHOR: DELETE the first clause below if this build links any SDK. -->
             <p>
               The App itself integrates no third-party services. However, the App is distributed
               through the <strong>Apple App Store</strong>, and Apple independently processes certain
@@ -199,11 +202,12 @@
 
           <section id="purchases" data-reveal>
             <h2><span class="num">06</span> Purchases</h2>
+            <p>{{PRIVACY_PURCHASES}}</p>
             <p>
-              If the App offers any in-app purchase or subscription, all payment processing is
-              handled entirely by Apple. We never see or receive your card number, billing address
-              or Apple Account credentials. Refunds and billing questions are handled by Apple
-              through your purchase history.
+              Payment processing is handled entirely by Apple. We never see or receive your card
+              number, billing address or Apple Account credentials, and we receive no report from
+              Apple that identifies you personally. Refunds and billing questions are handled by
+              Apple through your purchase history.
             </p>
           </section>
 
@@ -217,6 +221,9 @@
             </p>
           </section>
 
+          <!-- AUTHOR: sections 08 and 09 are written on the premise that this build holds no
+               personal data and transmits nothing. If either is untrue, both must be rewritten —
+               "there is nothing for us to delete" becomes a false statement under GDPR/CCPA. -->
           <section id="rights" data-reveal>
             <h2><span class="num">08</span> Your rights</h2>
             <p>

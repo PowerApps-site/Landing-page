@@ -24,12 +24,14 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <script src="/assets/js/theme-init.js"></script>
 
+<!-- AUTHOR: price 0 below means free to DOWNLOAD, which stays true when the app has an
+     in-app purchase. Change it only if the app itself is paid up front. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "{{APP_NAME}}",
-  "operatingSystem": "iOS 16.0 or later",
+  "operatingSystem": "iOS {{MIN_IOS}}.0 or later",
   "applicationCategory": "UtilitiesApplication",
   "url": "https://powerapps.site/{{APP_SLUG}}/",
   "description": "{{APP_DESCRIPTION_SHORT}}",
@@ -115,11 +117,14 @@
         </p>
 
         <div class="chips" style="margin-top:22px;--d:120ms" data-reveal>
+          <!-- AUTHOR: every chip is a claim about the binary. Fill or DELETE — do not ship a
+               default you have not checked. "Free" is wrong when there is an in-app purchase;
+               use "Free to download". -->
           <span class="chip">{{CHIP_1}}</span>
-          <span class="chip">No account</span>
-          <span class="chip">Works offline</span>
-          <span class="chip">No tracking</span>
-          <span class="chip">iOS 16+</span>
+          <span class="chip">{{CHIP_2}}</span>
+          <span class="chip">{{CHIP_3}}</span>
+          <span class="chip">{{CHIP_4}}</span>
+          <span class="chip">iOS {{MIN_IOS}}+</span>
         </div>
 
         <div class="btn-row" style="margin-top:30px;--d:160ms" data-reveal>
@@ -156,10 +161,10 @@
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
-    <span>{{TAG_1}}</span><span>No permissions required</span><span>Offline</span><span>Free forever</span>
-    <span>{{TAG_2}}</span><span>Dark mode</span><span>VoiceOver ready</span>
-    <span>{{TAG_1}}</span><span>No permissions required</span><span>Offline</span><span>Free forever</span>
-    <span>{{TAG_2}}</span><span>Dark mode</span><span>VoiceOver ready</span>
+    <span>{{TAG_1}}</span><span>{{TAG_2}}</span><span>{{TAG_3}}</span><span>{{TAG_4}}</span>
+    <span>{{TAG_5}}</span><span>{{TAG_6}}</span>
+    <span>{{TAG_1}}</span><span>{{TAG_2}}</span><span>{{TAG_3}}</span><span>{{TAG_4}}</span>
+    <span>{{TAG_5}}</span><span>{{TAG_6}}</span>
   </div>
 </div>
 
@@ -220,24 +225,24 @@
         <span class="feat__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/></svg>
         </span>
-        <h3 class="h3">Nothing leaves your phone</h3>
-        <p>No analytics, no crash SDKs, no ad networks. There is no backend to send anything to.</p>
+        <h3 class="h3">{{FEATURE_3_TITLE}}</h3>
+        <p>{{FEATURE_3_TEXT}}</p>
       </article>
 
       <article class="card feat" data-reveal>
         <span class="feat__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
         </span>
-        <h3 class="h3">Fast by design</h3>
-        <p>Launches instantly, one screen, one button. No onboarding carousel, no rating nag.</p>
+        <h3 class="h3">{{FEATURE_4_TITLE}}</h3>
+        <p>{{FEATURE_4_TEXT}}</p>
       </article>
 
       <article class="card feat" data-reveal>
         <span class="feat__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
         </span>
-        <h3 class="h3">Accessible</h3>
-        <p>Full VoiceOver labels, Dynamic Type support, and a layout that respects Reduce Motion.</p>
+        <h3 class="h3">{{FEATURE_5_TITLE}}</h3>
+        <p>{{FEATURE_5_TEXT}}</p>
       </article>
     </div>
   </div>
@@ -258,7 +263,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
         </span>
         <h3 class="h3">Privacy Policy</h3>
-        <p>What we collect (nothing), what the app stores on your device, and how Apple&rsquo;s own reporting works.</p>
+        <p>What we collect, what the app stores on your device, which permissions it asks for, and how Apple&rsquo;s own reporting works.</p>
         <span class="link-arrow">
           Read the policy
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
