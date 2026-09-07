@@ -18,7 +18,7 @@
   <ellipse cx="240" cy="120" rx="420" ry="320" fill="url(#glow)"/>
   <ellipse cx="1000" cy="560" rx="380" ry="300" fill="url(#glow)" opacity=".7"/>
   <rect x="80" y="78" width="72" height="72" rx="20" fill="url(#t)"/>
-  <path d="M116 96c-12 17-18 25-18 32a18 18 0 0 0 36 0c0-7-6-15-18-32z" fill="#fff" fill-opacity=".92"/>
+  <g transform="translate(80 78) scale(1.125)"><path d="M35.9 3.5 11.68 36.28H30.2L25.93 60.5 53 26.3h-18.52L35.9 3.5Z" fill="#fff"/></g>
   <text x="176" y="128" font-family="Inter,Helvetica,Arial,sans-serif" font-size="34" font-weight="700" fill="#eef1f8">PowerApps</text>
   <text x="80" y="300" font-family="Inter,Helvetica,Arial,sans-serif" font-size="88" font-weight="800" fill="#eef1f8" letter-spacing="-3">Small iOS apps that</text>
   <text x="80" y="394" font-family="Inter,Helvetica,Arial,sans-serif" font-size="88" font-weight="800" fill="url(#t)" letter-spacing="-3">do one thing well.</text>

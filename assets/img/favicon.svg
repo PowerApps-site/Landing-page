@@ -1,12 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PowerApps">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4f7cff"/>
-      <stop offset=".55" stop-color="#22d3ee"/>
-      <stop offset="1" stop-color="#a855f7"/>
+    <linearGradient id="pa-fav-g" gradientUnits="userSpaceOnUse" x1="-6.54" y1="14.03" x2="70.54" y2="49.97">
+      <stop offset="0" stop-color="#3f63d1"/>
+      <stop offset=".55" stop-color="#1aacc2"/>
+      <stop offset="1" stop-color="#8a45c9"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="url(#g)"/>
-  <path d="M32 13 19 32.5a13.6 13.6 0 1 0 26 0Z" fill="#fff" fill-opacity=".92"/>
-  <path d="M35.5 26.5 27 37.5h5.6L29 47l9-12h-5.7z" fill="#2563eb"/>
+  <rect width="64" height="64" rx="18" fill="url(#pa-fav-g)"/>
+  <path d="M35.9 3.5 11.68 36.28H30.2L25.93 60.5 53 26.3h-18.52L35.9 3.5Z" fill="#fff"/>
 </svg>
