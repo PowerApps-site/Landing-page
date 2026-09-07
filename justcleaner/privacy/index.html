@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — JustCleaner | PowerApps</title>
-<meta name="description" content="Privacy policy for the JustCleaner iOS app. JustCleaner does not collect, store or share personal data.">
+<meta name="description" content="Privacy policy for the JustCleaner iOS app. No accounts, no analytics, no servers. The optional microphone tools analyse sound on your device and never record it.">
 <meta name="theme-color" content="#06070b">
 <link rel="canonical" href="https://powerapps.site/justcleaner/privacy/">
 <link rel="icon" href="/assets/img/justcleaner.svg" type="image/svg+xml">
 <meta property="og:title" content="Privacy Policy — JustCleaner">
-<meta property="og:description" content="JustCleaner does not collect, store or share personal data.">
+<meta property="og:description" content="No accounts, no analytics, no servers. Microphone audio is analysed on device and never recorded.">
 <meta property="og:url" content="https://powerapps.site/justcleaner/privacy/">
 <meta property="og:image" content="https://powerapps.site/assets/img/og.svg">
 <meta name="twitter:card" content="summary_large_image">
@@ -82,15 +82,16 @@
         <h4>On this page</h4>
         <a href="#overview">1. Overview</a>
         <a href="#collect">2. Data we collect</a>
-        <a href="#device">3. Data stored on device</a>
-        <a href="#permissions">4. Permissions</a>
-        <a href="#third-parties">5. Third parties</a>
-        <a href="#purchases">6. Purchases</a>
-        <a href="#children">7. Children</a>
-        <a href="#rights">8. Your rights</a>
-        <a href="#security">9. Security</a>
-        <a href="#changes">10. Changes</a>
-        <a href="#contact">11. Contact</a>
+        <a href="#microphone">3. Microphone</a>
+        <a href="#device">4. Data stored on device</a>
+        <a href="#permissions">5. Permissions</a>
+        <a href="#third-parties">6. Third parties</a>
+        <a href="#purchases">7. Purchases</a>
+        <a href="#children">8. Children</a>
+        <a href="#rights">9. Your rights</a>
+        <a href="#security">10. Security</a>
+        <a href="#changes">11. Changes</a>
+        <a href="#contact">12. Contact</a>
       </aside>
 
       <div>
@@ -98,8 +99,8 @@
           <span class="eyebrow">JustCleaner</span>
           <h1 class="h1">Privacy Policy</h1>
           <div class="doc__meta">
-            <span>Effective date: 1 September 2026</span>
-            <span>Last updated: 1 September 2026</span>
+            <span>Effective date: 8 September 2026</span>
+            <span>Last updated: 8 September 2026</span>
             <span>Applies to: JustCleaner for iOS</span>
           </div>
         </header>
@@ -115,9 +116,10 @@
             </p>
             <div class="callout">
               <p>
-                <strong>Short version:</strong> JustCleaner does not collect, store, transmit or sell
-                personal data. It has no user accounts, no analytics, no advertising SDKs and no
-                backend server. Everything happens locally on your device.
+                <strong>Short version:</strong> JustCleaner has no user accounts, no analytics, no
+                advertising SDKs and no backend server, and it sends nothing about you anywhere. Two
+                optional tools use the microphone to measure sound as it happens — that audio is
+                analysed on your device, is never recorded or saved, and never leaves it.
               </p>
             </div>
             <p>
@@ -136,7 +138,7 @@
               <li>Name, email address, phone number or any other contact detail</li>
               <li>Account credentials — the App has no sign-up or login</li>
               <li>Location data, whether precise or coarse</li>
-              <li>Contacts, photos, calendar, health or microphone data</li>
+              <li>Contacts, photos, calendar or health data</li>
               <li>Device identifiers used for advertising or cross-app tracking (IDFA)</li>
               <li>Usage analytics, event logs, session recordings or heat maps</li>
               <li>Payment or financial information</li>
@@ -145,36 +147,90 @@
               The App contains no third-party analytics, attribution, crash-reporting or advertising
               software development kits. We operate no server that receives data from the App.
             </p>
+            <p>
+              Two features do switch the microphone on while you are using them. Nothing is recorded
+              and nothing is sent to us, but we would rather explain exactly how that works than
+              leave it out — see <a href="#microphone">section 3</a>.
+            </p>
+          </section>
+
+          <section id="microphone" data-reveal>
+            <h2><span class="num">03</span> Microphone</h2>
+            <p>
+              Two optional tools in the App need to hear sound in order to work:
+            </p>
+            <div class="kv">
+              <div class="kv__item"><b>Sound level</b><span>Shows an approximate reading of how loud the room around you is.</span></div>
+              <div class="kv__item"><b>Speaker check</b><span>Plays a frequency sweep through the speaker and measures what comes back, so you can compare two readings yourself.</span></div>
+            </div>
+            <p>
+              iOS asks for your permission the first time you open one of them. You can say no: every
+              other part of the App keeps working, and you will simply not be able to use those two
+              tools.
+            </p>
+            <p>
+              While a tool is running, sound is analysed as it arrives, in memory:
+            </p>
+            <ul>
+              <li>No audio file is ever created. The sound level tool sends its audio stream to
+                  <code>/dev/null</code>, which means the system discards every sample immediately and
+                  reads only the loudness figure</li>
+              <li>The speaker check keeps only the frequency magnitudes it needs to draw the curve on
+                  screen, and drops them when you leave the screen</li>
+              <li>There is no speech recognition, no transcription, no keyword detection and no
+                  attempt to identify who or what is making a sound</li>
+              <li>No audio, and no measurement derived from it, is transmitted anywhere — there is
+                  nowhere for it to go, because the App has no server</li>
+            </ul>
+            <p>
+              The microphone is active only while one of those two screens is open and measuring. iOS
+              shows its orange indicator the entire time, so you can always see when it is on. You can
+              withdraw the permission at any moment in <strong>Settings › Privacy &amp; Security ›
+              Microphone › JustCleaner</strong>.
+            </p>
           </section>
 
           <section id="device" data-reveal>
-            <h2><span class="num">03</span> Information stored on your device</h2>
+            <h2><span class="num">04</span> Information stored on your device</h2>
             <p>
-              To remember your preferences between launches, the App may store a small amount of
-              non-personal configuration locally using Apple's standard on-device storage:
+              So that the App remembers what you chose between launches, it stores a small amount of
+              non-personal configuration locally, inside its own sandbox:
             </p>
             <div class="kv">
-              <div class="kv__item"><b>Preferences</b><span>Selected intensity or duration, sound settings and interface options.</span></div>
-              <div class="kv__item"><b>Onboarding state</b><span>Whether introductory screens have already been shown.</span></div>
+              <div class="kv__item"><b>Preferences</b><span>The cycle programme you last used, your manual frequency, the calibration offset for the sound level reading, the interface language and the light or dark theme.</span></div>
+              <div class="kv__item"><b>Cycle history</b><span>A local list of the cycles you have run: the date and time, which programme, how long it lasted, and whether it finished or was interrupted. Nothing about the state of your device — the App has no sensor and does not know whether any water came out. Limited to the 100 most recent entries, and you can erase the whole list from inside the App at any time.</span></div>
+              <div class="kv__item"><b>Unlock state</b><span>A yes/no flag recording whether the one-time purchase has been made, so that the App still works when you are offline. The purchase itself is verified with Apple, not with us.</span></div>
             </div>
             <p>
-              This data never leaves your device, is not readable by us, and is removed when you
-              delete the App.
+              None of this contains a name, an identifier or anything that points back to you. It
+              never leaves your device, it is not readable by us, and it is removed when you delete
+              the App.
             </p>
           </section>
 
           <section id="permissions" data-reveal>
-            <h2><span class="num">04</span> Device permissions</h2>
+            <h2><span class="num">05</span> Device permissions</h2>
             <p>
-              JustCleaner requests <strong>no system permissions</strong>. It does not use the
-              microphone, camera, location services, contacts, photo library, notifications or
-              Bluetooth. The App only plays audio through the standard iOS audio output, which
-              requires no permission prompt.
+              JustCleaner requests <strong>one permission, and only when you ask for it</strong>: the
+              microphone, for the two tools described in
+              <a href="#microphone">section 3</a>. Declining it leaves the rest of the App fully
+              usable.
+            </p>
+            <p>
+              It does <strong>not</strong> use the camera, location services, contacts, photo library,
+              calendar, health data or Bluetooth, and it sends no push notifications. Playing the tone
+              through the speaker — the App's main purpose — needs no permission at all.
+            </p>
+            <p>
+              You may also add JustCleaner to Siri, the Shortcuts app, a Home Screen widget or Control
+              Centre. Those shortcuts do one thing: they open the App and start a cycle. They carry no
+              personal data, and they give the App no access to your voice recordings, your Siri
+              history or anything else on your device.
             </p>
           </section>
 
           <section id="third-parties" data-reveal>
-            <h2><span class="num">05</span> Third-party services</h2>
+            <h2><span class="num">06</span> Third-party services</h2>
             <p>
               The App itself integrates no third-party services. However, the App is distributed
               through the <strong>Apple App Store</strong>, and Apple independently processes certain
@@ -198,17 +254,24 @@
           </section>
 
           <section id="purchases" data-reveal>
-            <h2><span class="num">06</span> Purchases</h2>
+            <h2><span class="num">07</span> Purchases</h2>
             <p>
-              If the App offers any in-app purchase or subscription, all payment processing is
-              handled entirely by Apple. We never see or receive your card number, billing address
-              or Apple Account credentials. Refunds and billing questions are handled by Apple
-              through your purchase history.
+              JustCleaner offers a single optional in-app purchase: a <strong>one-time unlock</strong>
+              of its additional features. It is not a subscription and it does not renew.
+            </p>
+            <p>
+              The purchase is sold and processed entirely by <strong>Apple</strong> through your Apple
+              Account. We never see or receive your card number, billing address or Apple Account
+              credentials, and we receive no report from Apple that identifies you personally. The App
+              asks Apple whether the unlock has been bought and keeps only a yes/no answer on your
+              device; restoring the purchase on another device is likewise a question put to Apple,
+              not to us. Refunds and billing questions are handled by Apple through your purchase
+              history.
             </p>
           </section>
 
           <section id="children" data-reveal>
-            <h2><span class="num">07</span> Children's privacy</h2>
+            <h2><span class="num">08</span> Children's privacy</h2>
             <p>
               The App is not directed at children under 13 (or the equivalent minimum age in your
               jurisdiction). Because the App collects no personal data from anyone, it collects no
@@ -218,7 +281,7 @@
           </section>
 
           <section id="rights" data-reveal>
-            <h2><span class="num">08</span> Your rights</h2>
+            <h2><span class="num">09</span> Your rights</h2>
             <p>
               Privacy laws such as the GDPR (European Economic Area and United Kingdom) and the
               CCPA/CPRA (California) give you rights over your personal data, including the rights
@@ -233,17 +296,19 @@
           </section>
 
           <section id="security" data-reveal>
-            <h2><span class="num">09</span> Data security</h2>
+            <h2><span class="num">10</span> Data security</h2>
             <p>
-              The App keeps its small set of preferences inside the iOS application sandbox, which
-              is protected by the operating system and by your device passcode and encryption. Since
-              no data is transmitted off the device, there is no transfer to intercept and no
-              database of ours that could be breached.
+              The App keeps its preferences and its cycle history inside the iOS application sandbox,
+              which is protected by the operating system and by your device passcode and encryption.
+              Microphone audio is never written to that sandbox, or anywhere else — it exists only in
+              memory for the instant it takes to measure it. Since no data is transmitted off the
+              device, there is no transfer to intercept and no database of ours that could be
+              breached.
             </p>
           </section>
 
           <section id="changes" data-reveal>
-            <h2><span class="num">10</span> Changes to this policy</h2>
+            <h2><span class="num">11</span> Changes to this policy</h2>
             <p>
               We may update this Privacy Policy to reflect changes to the App or to legal
               requirements. When we do, we will revise the "Last updated" date at the top of this
@@ -253,7 +318,7 @@
           </section>
 
           <section id="contact" data-reveal>
-            <h2><span class="num">11</span> Contact us</h2>
+            <h2><span class="num">12</span> Contact us</h2>
             <p>
               Questions, concerns or requests about this policy? Reach us at
               <a href="#" data-mail="moc.xednay@vomazimziza" data-mail-text>azizmizamov@yandex.com</a>.
