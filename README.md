@@ -51,9 +51,11 @@ a sentence that ships as a lie if you leave the default in place.
 - **App Store link** — `justcleaner/index.html` still points at
   `https://apps.apple.com/app/id0000000000`.
 - **Effective dates** in the legal pages (currently `8 September 2026`).
-- **Governing law** in `justcleaner/terms/index.html` §13 names the State of
-  California and the federal laws of the United States. Change it if you would
-  rather be governed by somewhere you are actually established.
+- **Governing law** in `justcleaner/terms/index.html` §13 names the Republic of
+  Uzbekistan, where the publisher is established. Change it if that ever moves.
+  Keep the second paragraph: it preserves consumers' mandatory local rights, which
+  a choice-of-law clause cannot override anyway, and stops the clause reading as
+  an unfair term.
 
 ## Keeping the legal pages true
 
