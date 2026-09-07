@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — {{APP_NAME}} | PowerApps</title>
+<meta name="description" content="Privacy policy for the {{APP_NAME}} iOS app. {{APP_NAME}} does not collect, store or share personal data.">
+<meta name="theme-color" content="#06070b">
+<link rel="canonical" href="https://powerapps.site/{{APP_SLUG}}/privacy/">
+<link rel="icon" href="/assets/img/{{APP_SLUG}}.svg" type="image/svg+xml">
+<meta property="og:title" content="Privacy Policy — {{APP_NAME}}">
+<meta property="og:description" content="{{APP_NAME}} does not collect, store or share personal data.">
+<meta property="og:url" content="https://powerapps.site/{{APP_SLUG}}/privacy/">
+<meta property="og:image" content="https://powerapps.site/assets/img/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/css/main.css">
+<script src="/assets/js/theme-init.js"></script>
+</head>
+<body>
+
+<div class="progress" data-progress aria-hidden="true"></div>
+
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-fx__grid"></div>
+  <div class="bg-fx__blob bg-fx__blob--1"></div>
+  <div class="bg-fx__blob bg-fx__blob--2"></div>
+  <div class="bg-fx__noise"></div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="/" aria-label="PowerApps home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z" fill="#fff"/></svg>
+      </span>
+      PowerApps
+    </a>
+
+    <nav class="nav__links" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/{{APP_SLUG}}/">{{APP_NAME}}</a>
+      <a href="/{{APP_SLUG}}/terms/">Terms of use</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Toggle color theme">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="icon-btn nav__burger" data-burger type="button" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a class="btn btn--ghost btn--sm" href="/{{APP_SLUG}}/">Back to app</a>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" data-mmenu>
+  <a href="/">Home</a>
+  <a href="/{{APP_SLUG}}/">{{APP_NAME}}</a>
+  <a href="/{{APP_SLUG}}/terms/">Terms of use</a>
+</div>
+
+<main class="doc">
+  <div class="wrap">
+
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">PowerApps</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      <a href="/{{APP_SLUG}}/">{{APP_NAME}}</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      <span>Privacy Policy</span>
+    </nav>
+
+    <div class="doc__layout">
+
+      <aside class="toc" data-toc>
+        <h4>On this page</h4>
+        <a href="#overview">1. Overview</a>
+        <a href="#collect">2. Data we collect</a>
+        <a href="#device">3. Data stored on device</a>
+        <a href="#permissions">4. Permissions</a>
+        <a href="#third-parties">5. Third parties</a>
+        <a href="#purchases">6. Purchases</a>
+        <a href="#children">7. Children</a>
+        <a href="#rights">8. Your rights</a>
+        <a href="#security">9. Security</a>
+        <a href="#changes">10. Changes</a>
+        <a href="#contact">11. Contact</a>
+      </aside>
+
+      <div>
+        <header class="doc__head" data-reveal>
+          <span class="eyebrow">{{APP_NAME}}</span>
+          <h1 class="h1">Privacy Policy</h1>
+          <div class="doc__meta">
+            <span>Effective date: {{EFFECTIVE_DATE}}</span>
+            <span>Last updated: {{EFFECTIVE_DATE}}</span>
+            <span>Applies to: {{APP_NAME}} for iOS</span>
+          </div>
+        </header>
+
+        <article class="prose">
+
+          <section id="overview" data-reveal>
+            <h2><span class="num">01</span> Overview</h2>
+            <p>
+              This Privacy Policy explains how <strong>PowerApps</strong> ("we", "us", "our") handles
+              information in connection with the <strong>{{APP_NAME}}</strong> application for iOS
+              (the "App").
+            </p>
+            <div class="callout">
+              <p>
+                <strong>Short version:</strong> {{APP_NAME}} does not collect, store, transmit or sell
+                personal data. It has no user accounts, no analytics, no advertising SDKs and no
+                backend server. Everything happens locally on your device.
+              </p>
+            </div>
+            <p>
+              By downloading or using the App you agree to this policy. If you do not agree, please
+              do not use the App.
+            </p>
+          </section>
+
+          <section id="collect" data-reveal>
+            <h2><span class="num">02</span> Information we collect</h2>
+            <p>
+              <strong>We collect none.</strong> The App does not ask for, gather or transmit any of
+              the following:
+            </p>
+            <ul>
+              <li>Name, email address, phone number or any other contact detail</li>
+              <li>Account credentials — the App has no sign-up or login</li>
+              <li>Location data, whether precise or coarse</li>
+              <li>Contacts, photos, calendar, health or microphone data</li>
+              <li>Device identifiers used for advertising or cross-app tracking (IDFA)</li>
+              <li>Usage analytics, event logs, session recordings or heat maps</li>
+              <li>Payment or financial information</li>
+            </ul>
+            <p>
+              The App contains no third-party analytics, attribution, crash-reporting or advertising
+              software development kits. We operate no server that receives data from the App.
+            </p>
+          </section>
+
+          <section id="device" data-reveal>
+            <h2><span class="num">03</span> Information stored on your device</h2>
+            <p>
+              To remember your preferences between launches, the App may store a small amount of
+              non-personal configuration locally using Apple's standard on-device storage:
+            </p>
+            <div class="kv">
+              <div class="kv__item"><b>Preferences</b><span>Selected intensity or duration, sound settings and interface options.</span></div>
+              <div class="kv__item"><b>Onboarding state</b><span>Whether introductory screens have already been shown.</span></div>
+            </div>
+            <p>
+              This data never leaves your device, is not readable by us, and is removed when you
+              delete the App.
+            </p>
+          </section>
+
+          <section id="permissions" data-reveal>
+            <h2><span class="num">04</span> Device permissions</h2>
+            <p>
+              {{APP_NAME}} requests <strong>no system permissions</strong>. It does not use the
+              microphone, camera, location services, contacts, photo library, notifications or
+              Bluetooth. The App only plays audio through the standard iOS audio output, which
+              requires no permission prompt.
+            </p>
+          </section>
+
+          <section id="third-parties" data-reveal>
+            <h2><span class="num">05</span> Third-party services</h2>
+            <p>
+              The App itself integrates no third-party services. However, the App is distributed
+              through the <strong>Apple App Store</strong>, and Apple independently processes certain
+              information as part of that distribution — for example download and purchase records,
+              aggregated and anonymised usage statistics you may have opted into, and crash reports
+              you choose to share with developers.
+            </p>
+            <p>
+              That processing is governed by Apple's own privacy policy, not by this one. Any
+              aggregate statistics Apple makes available to us cannot be used to identify an
+              individual user. See
+              <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>
+              for details.
+            </p>
+            <p>
+              This website (powerapps.site) is served as static files. It sets no advertising or
+              tracking cookies. It does load a web font from Google Fonts, which means your browser
+              contacts Google's servers to fetch the font file; that request is subject to Google's
+              privacy policy.
+            </p>
+          </section>
+
+          <section id="purchases" data-reveal>
+            <h2><span class="num">06</span> Purchases</h2>
+            <p>
+              If the App offers any in-app purchase or subscription, all payment processing is
+              handled entirely by Apple. We never see or receive your card number, billing address
+              or Apple Account credentials. Refunds and billing questions are handled by Apple
+              through your purchase history.
+            </p>
+          </section>
+
+          <section id="children" data-reveal>
+            <h2><span class="num">07</span> Children's privacy</h2>
+            <p>
+              The App is not directed at children under 13 (or the equivalent minimum age in your
+              jurisdiction). Because the App collects no personal data from anyone, it collects no
+              personal data from children either. If you believe a child has somehow provided us
+              with personal information, contact us and we will address it.
+            </p>
+          </section>
+
+          <section id="rights" data-reveal>
+            <h2><span class="num">08</span> Your rights</h2>
+            <p>
+              Privacy laws such as the GDPR (European Economic Area and United Kingdom) and the
+              CCPA/CPRA (California) give you rights over your personal data, including the rights
+              to access, correct, delete, restrict or port it, and to opt out of its sale.
+            </p>
+            <p>
+              Because we hold <strong>no personal data about you</strong>, there is nothing for us to
+              disclose, correct, export or delete — and we have never sold or shared personal data,
+              because we have none. To remove every trace of the App's local data, simply delete the
+              App from your device. You may still contact us with any question about this policy.
+            </p>
+          </section>
+
+          <section id="security" data-reveal>
+            <h2><span class="num">09</span> Data security</h2>
+            <p>
+              The App keeps its small set of preferences inside the iOS application sandbox, which
+              is protected by the operating system and by your device passcode and encryption. Since
+              no data is transmitted off the device, there is no transfer to intercept and no
+              database of ours that could be breached.
+            </p>
+          </section>
+
+          <section id="changes" data-reveal>
+            <h2><span class="num">10</span> Changes to this policy</h2>
+            <p>
+              We may update this Privacy Policy to reflect changes to the App or to legal
+              requirements. When we do, we will revise the "Last updated" date at the top of this
+              page. Material changes will be highlighted on this page. Continuing to use the App
+              after an update means you accept the revised policy.
+            </p>
+          </section>
+
+          <section id="contact" data-reveal>
+            <h2><span class="num">11</span> Contact us</h2>
+            <p>
+              Questions, concerns or requests about this policy? Reach us at
+              <a href="#" data-mail="moc.xednay@vomazimziza" data-mail-text>azizmizamov@yandex.com</a>.
+              We aim to reply within two business days.
+            </p>
+            <div class="callout">
+              <p><strong>Data controller:</strong> PowerApps — publisher of {{APP_NAME}} for iOS.</p>
+            </div>
+          </section>
+
+        </article>
+
+        <div class="doc__foot">
+          <a class="link-arrow" href="/{{APP_SLUG}}/terms/">
+            Read the Terms of Use
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost btn--sm" href="/{{APP_SLUG}}/">Back to {{APP_NAME}}</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__bottom" style="margin-top:0;border-top:0;padding-top:0">
+      <span>&copy; <span data-year>2026</span> PowerApps. All rights reserved.</span>
+      <span><a href="/">powerapps.site</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
