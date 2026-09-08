@@ -10,6 +10,9 @@ No build step, no dependencies. Plain HTML, one CSS file, one JS file.
 | URL | File |
 | --- | --- |
 | `/` | `index.html` — landing page, app grid |
+| `/clearway/` | `clearway/index.html` — app page |
+| `/clearway/privacy/` | `clearway/privacy/index.html` |
+| `/clearway/terms/` | `clearway/terms/index.html` |
 | `/justcleaner/` | `justcleaner/index.html` — app page |
 | `/justcleaner/privacy/` | `justcleaner/privacy/index.html` |
 | `/justcleaner/terms/` | `justcleaner/terms/index.html` |
@@ -49,7 +52,8 @@ a sentence that ships as a lie if you leave the default in place.
 ## Placeholders to replace before going live
 
 - **App Store link** — `justcleaner/index.html` still points at
-  `https://apps.apple.com/app/id0000000000`.
+  `https://apps.apple.com/app/id0000000000`. ClearWay's is real
+  (`id6809789001`) but only resolves once the app is published.
 - **Effective dates** in the legal pages (currently `8 September 2026`).
 - **Governing law** in `justcleaner/terms/index.html` §13 names the Republic of
   Uzbekistan, where the publisher is established. Change it if that ever moves.
@@ -78,6 +82,15 @@ Two rules keep that from happening again.
 
 Before submitting to App Review, read the privacy page next to `Info.plist` and
 next to the App Privacy answers in App Store Connect, and make the three agree.
+
+A third trap surfaced writing the ClearWay pages, and it is not covered by a
+`TODO`. The template's sections 08 and 09 are written on the premise that the app
+transmits nothing — true of a speaker cleaner, false of anything that talks to a
+network. ClearWay's whole purpose is to send DNS queries to a third-party
+resolver, so "no data is transmitted off the device" had to go, and sections 02
+and 05 now say plainly which operator sees the lookups. **If the next app makes
+any network request at all, those two sections are wrong by default and no
+placeholder will tell you.**
 
 > These pages are a solid, App-Store-ready starting point, but they are not legal
 > advice. Have a lawyer look them over if the app grows.

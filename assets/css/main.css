@@ -712,6 +712,7 @@ h1, h2, h3, h4 {
 
 .app-icon--aqua { background: linear-gradient(155deg, #38bdf8, #2563eb 55%, #4c1d95); color: #fff; }
 .app-icon--soon  { background: linear-gradient(155deg, #64748b, #1e293b); color: #cbd5e1; }
+.app-icon--road  { background: linear-gradient(155deg, #0a2340, #020a16 60%, #0f3d5c); color: #3fe3c4; }
 .app-icon--brand { background: var(--grad); color: #fff; }
 
 .app-card__name { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
