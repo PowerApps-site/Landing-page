@@ -107,6 +107,24 @@ To change it, reverse the new address and update every `data-mail` value:
 node -e 'console.log([..."you@example.com"].reverse().join(""))'
 ```
 
+## Cache busting
+
+`assets/css/main.css` and `assets/js/main.js` never change name, and the server
+sends `Cache-Control: max-age=600`. Without help, that means a returning visitor
+spends ten minutes after every deploy with the **new HTML and the old
+stylesheet**. That is not a flicker: it shipped the hero carousel as two stacked
+phone screens spilling out of the mockup, because the markup for the slides had
+arrived and the rules that overlap them had not.
+
+```bash
+node scripts/stamp-assets.mjs          # rewrite /assets/… URLs with a content hash
+node scripts/stamp-assets.mjs --check  # exit 1 if any stamp is stale
+```
+
+The deploy workflow runs it too, so forgetting it locally cannot break
+production. It is idempotent, it leaves `{{APP_SLUG}}` placeholders alone, and an
+asset whose bytes did not change keeps its hash and stays cached.
+
 ## Deploying
 
 ### Vercel

@@ -26,6 +26,13 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      # Assets are served with max-age=600 and their filenames never change, so
+      # without this a returning visitor spends ten minutes with the new HTML and
+      # the old stylesheet. Stamping the URL with the file's own hash makes the
+      # pair atomic. Done here as well as locally so it cannot be forgotten.
+      - name: Stamp asset URLs with their content hash
+        run: node scripts/stamp-assets.mjs
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
