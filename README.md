@@ -151,6 +151,13 @@ one-year immutable cache on `/assets/*`. Add `powerapps.site` under
   (`IntersectionObserver`), counter roll-ups, a cursor-tracking spotlight on
   cards, a parallax phone mockup, a marquee, and a reading-progress bar on the
   legal pages.
+- The hero phone is a carousel. Each app is a `[data-phone-slide]` inside
+  `[data-phone-carousel]`, with one `[data-phone-dot]` button per slide; the
+  slides share a grid cell and cross-fade, so the phone never changes height.
+  Adding an app means adding a slide and a dot — the script counts them. It does
+  not auto-advance under `prefers-reduced-motion`, since an unattended slideshow
+  is the kind of movement that setting exists to stop, and it stops entirely
+  while the tab is in the background.
 - Everything collapses to a static, fully readable page under
   `prefers-reduced-motion: reduce`, and the legal pages have their own print
   stylesheet.

@@ -539,6 +539,64 @@ h1, h2, h3, h4 {
   z-index: 3;
 }
 
+/* Hero carousel: the slides share one grid cell and cross-fade, so the phone
+   never changes height between apps. */
+.phone-slide {
+  grid-area: 1 / 1;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity .7s ease;
+  pointer-events: none;
+}
+.phone-slide.is-on { opacity: 1; }
+
+.eject-btn--calm { color: #3fe3c4; }
+.eject-btn--calm::before,
+.eject-btn--calm::after { animation: none; opacity: 0; }
+
+/* Eight ticks, all lit: the "8 of 8" the caption claims. */
+.meter { display: flex; gap: 5px; align-items: center; height: 34px; }
+.meter i {
+  width: 6px; height: 18px;
+  border-radius: 3px;
+  background: #3fe3c4;
+  opacity: .35;
+  animation: meter-fill 2.8s ease-in-out infinite;
+}
+.meter i:nth-child(1) { animation-delay: 0s; }
+.meter i:nth-child(2) { animation-delay: .1s; }
+.meter i:nth-child(3) { animation-delay: .2s; }
+.meter i:nth-child(4) { animation-delay: .3s; }
+.meter i:nth-child(5) { animation-delay: .4s; }
+.meter i:nth-child(6) { animation-delay: .5s; }
+.meter i:nth-child(7) { animation-delay: .6s; }
+.meter i:nth-child(8) { animation-delay: .7s; }
+@keyframes meter-fill {
+  0%, 12%   { opacity: .28; height: 12px; }
+  30%, 78%  { opacity: 1;   height: 26px; }
+  100%      { opacity: .28; height: 12px; }
+}
+
+.phone-dots {
+  position: absolute;
+  left: 50%; bottom: -34px;
+  translate: -50% 0;
+  display: flex; gap: 9px;
+  z-index: 4;
+}
+.phone-dot {
+  width: 8px; height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--line, #33415580);
+  cursor: pointer;
+  transition: width .3s ease, background .3s ease;
+}
+.phone-dot.is-on { width: 22px; background: var(--accent, #38bdf8); }
+.phone-dot:focus-visible { outline: 2px solid var(--accent, #38bdf8); outline-offset: 3px; }
+
 .screen-ui {
   position: relative;
   text-align: center;
@@ -1128,6 +1186,9 @@ h1, h2, h3, h4 {
 
 /* ---------- Motion / print ---------- */
 @media (prefers-reduced-motion: reduce) {
+  .phone-slide { transition: none; }
+  .meter i { animation: none; opacity: 1; height: 22px; }
+
   *, *::before, *::after {
     animation-duration: .001ms !important;
     animation-iteration-count: 1 !important;

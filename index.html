@@ -140,22 +140,44 @@
       </div>
 
       <!-- phone mockup -->
-      <div class="phone-stage" data-reveal style="--d:200ms" aria-hidden="true">
-        <div class="phone" data-parallax-phone>
+      <div class="phone-stage" data-reveal style="--d:200ms">
+        <div class="phone" data-parallax-phone aria-hidden="true">
           <div class="phone__notch"></div>
-          <div class="phone__screen">
-            <div class="screen-ui">
-              <span class="screen-ui__label">JustCleaner</span>
-              <div class="eject-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2.5s6.5 7.2 6.5 11a6.5 6.5 0 0 1-13 0c0-3.8 6.5-11 6.5-11Z"/>
-                </svg>
+          <div class="phone__screen" data-phone-carousel>
+            <div class="phone-slide is-on" data-phone-slide>
+              <div class="screen-ui">
+                <span class="screen-ui__label">JustCleaner</span>
+                <div class="eject-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2.5s6.5 7.2 6.5 11a6.5 6.5 0 0 1-13 0c0-3.8 6.5-11 6.5-11Z"/>
+                  </svg>
+                </div>
+                <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="screen-ui__title">Ejecting water…</div>
+                <p class="screen-ui__hint">Keep your iPhone speaker facing down</p>
               </div>
-              <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <div class="screen-ui__title">Ejecting water…</div>
-              <p class="screen-ui__hint">Keep your iPhone speaker facing down</p>
+            </div>
+
+            <div class="phone-slide" data-phone-slide>
+              <div class="screen-ui">
+                <span class="screen-ui__label">ClearWay</span>
+                <div class="eject-btn eject-btn--calm">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9.7 4h4.6l4.7 16H5L9.7 4Z"/>
+                    <path d="M12 6.4v1.9M12 10.8v2.4M12 15.8v3.4"/>
+                  </svg>
+                </div>
+                <div class="meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="screen-ui__title">Blocks 8 of 8 · 417 ms</div>
+                <p class="screen-ui__hint">Measured from this device, not promised</p>
+              </div>
             </div>
           </div>
+        </div>
+
+        <div class="phone-dots" role="tablist" aria-label="Featured apps">
+          <button class="phone-dot is-on" type="button" data-phone-dot aria-label="JustCleaner"></button>
+          <button class="phone-dot" type="button" data-phone-dot aria-label="ClearWay"></button>
         </div>
 
         <div class="phone-chip phone-chip--a">

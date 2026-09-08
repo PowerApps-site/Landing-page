@@ -159,6 +159,59 @@
     }, { passive: true });
   }
 
+  /* ---------- Hero phone carousel ---------- */
+  function initPhoneCarousel() {
+    var stage = document.querySelector('[data-phone-carousel]');
+    if (!stage) return;
+
+    var slides = [].slice.call(stage.querySelectorAll('[data-phone-slide]'));
+    var dots = [].slice.call(document.querySelectorAll('[data-phone-dot]'));
+    if (slides.length < 2) return;
+
+    var index = 0;
+    var timer = null;
+    var DWELL = 5200;
+
+    function show(next) {
+      index = (next + slides.length) % slides.length;
+      slides.forEach(function (el, i) { el.classList.toggle('is-on', i === index); });
+      dots.forEach(function (el, i) {
+        el.classList.toggle('is-on', i === index);
+        el.setAttribute('aria-selected', i === index ? 'true' : 'false');
+      });
+    }
+
+    function start() {
+      // Not under reduced motion: an unattended slideshow is exactly the kind of
+      // movement that setting exists to stop. The dots still work by hand.
+      if (reduced || timer) return;
+      timer = setInterval(function () { show(index + 1); }, DWELL);
+    }
+
+    function stop() {
+      if (!timer) return;
+      clearInterval(timer);
+      timer = null;
+    }
+
+    dots.forEach(function (dot, i) {
+      dot.setAttribute('role', 'tab');
+      dot.addEventListener('click', function () {
+        stop();
+        show(i);
+        start();
+      });
+    });
+
+    // Nothing to animate while the tab is in the background.
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else start();
+    });
+
+    show(0);
+    start();
+  }
+
   /* ---------- Reading progress (legal pages) ---------- */
   function initProgress() {
     var bar = document.querySelector('[data-progress]');
@@ -221,6 +274,7 @@
     initCounters();
     initSpotlight();
     initPhoneParallax();
+    initPhoneCarousel();
     initProgress();
     initToc();
     initMisc();
