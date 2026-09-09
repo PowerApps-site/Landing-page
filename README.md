@@ -51,9 +51,9 @@ a sentence that ships as a lie if you leave the default in place.
 
 ## Placeholders to replace before going live
 
-- **App Store link** — `justcleaner/index.html` still points at
-  `https://apps.apple.com/app/id0000000000`. ClearWay's is real
-  (`id6809789001`) but only resolves once the app is published.
+- **App Store links** — both apps now carry their real Apple IDs
+  (`id6809809538` for JustCleaner, `id6809789001` for ClearWay). Each URL only
+  resolves once that app is published; until then the button 404s.
 - **Effective dates** in the legal pages (currently `8 September 2026`).
 - **Governing law** in `justcleaner/terms/index.html` §13 names the Republic of
   Uzbekistan, where the publisher is established. Change it if that ever moves.
