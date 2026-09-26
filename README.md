@@ -16,6 +16,9 @@ No build step, no dependencies. Plain HTML, one CSS file, one JS file.
 | `/justcleaner/` | `justcleaner/index.html` — app page |
 | `/justcleaner/privacy/` | `justcleaner/privacy/index.html` |
 | `/justcleaner/terms/` | `justcleaner/terms/index.html` |
+| `/powerdaf/` | `powerdaf/index.html` — app page |
+| `/powerdaf/privacy/` | `powerdaf/privacy/index.html` |
+| `/powerdaf/terms/` | `powerdaf/terms/index.html` |
 | any unknown path | `404.html` |
 
 Every app gets its own top-level folder with the same three pages.

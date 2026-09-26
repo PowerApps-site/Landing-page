@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PowerDAF — Delayed-feedback speech practice for stuttering | PowerApps</title>
+<meta name="description" content="PowerDAF is a speech practice app for people who stutter: live delayed auditory feedback through headphones, speech techniques, breathing and reading aloud. Coming soon to the App Store — free to download, with an optional one-time Pro purchase.">
+<meta name="theme-color" content="#06070b">
+<link rel="canonical" href="https://powerapps.site/powerdaf/">
+<link rel="icon" href="/assets/img/powerdaf.svg?v=2e666234" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/powerdaf.svg?v=2e666234">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PowerApps">
+<meta property="og:title" content="PowerDAF — Delayed-feedback speech practice for stuttering">
+<meta property="og:description" content="Hear your own voice a moment later through headphones, with speech techniques, breathing and reading aloud alongside. No account, no tracking. A practice tool, not a medical device.">
+<meta property="og:url" content="https://powerapps.site/powerdaf/">
+<meta property="og:image" content="https://powerapps.site/assets/img/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/css/main.css?v=1ecda956">
+<script src="/assets/js/theme-init.js?v=34f07e67"></script>
+
+<!-- AUTHOR: there is no "offers" or "installUrl" below on purpose. PowerDAF has no
+     Apple ID yet and is not offered anywhere, so an Offer would describe something
+     that does not exist. Once the app is published, add both, as in
+     /justcleaner/index.html:
+       "installUrl": "https://apps.apple.com/app/id<APPLE_ID>",
+       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "url": "https://apps.apple.com/app/id<APPLE_ID>" },
+     price 0 means free to DOWNLOAD, which stays true with the Pro in-app purchase. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PowerDAF",
+  "operatingSystem": "iOS 18.0 or later",
+  "applicationCategory": "HealthApplication",
+  "url": "https://powerapps.site/powerdaf/",
+  "description": "Speech practice for people who stutter: live delayed auditory feedback through headphones, pitch shift, masking noise, speech techniques, breathing and reading aloud. A practice tool, not a medical device.",
+  "publisher": { "@type": "Person", "name": "Azizbek Mizamov", "alternateName": "PowerApps", "url": "https://powerapps.site/" }
+}
+</script>
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-fx__grid"></div>
+  <div class="bg-fx__blob bg-fx__blob--1"></div>
+  <div class="bg-fx__blob bg-fx__blob--2"></div>
+  <div class="bg-fx__blob bg-fx__blob--3"></div>
+  <div class="bg-fx__noise"></div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="/" aria-label="PowerApps home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z" fill="#fff"/></svg>
+      </span>
+      PowerApps
+    </a>
+
+    <nav class="nav__links" aria-label="Main">
+      <a href="/#apps">All apps</a>
+      <a href="#features">Features</a>
+      <a href="#legal">Legal</a>
+      <a href="#support">Support</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Toggle color theme">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="icon-btn nav__burger" data-burger type="button" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a class="btn btn--primary btn--sm" href="#legal">Legal docs</a>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" data-mmenu>
+  <a href="/#apps">All apps</a>
+  <a href="#features">Features</a>
+  <a href="#legal">Legal</a>
+  <a href="#support">Support</a>
+</div>
+
+<main>
+
+<!-- app hero -->
+<section class="app-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb" data-reveal>
+      <a href="/">PowerApps</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      <span>PowerDAF</span>
+    </nav>
+
+    <div class="app-hero__grid">
+      <div>
+        <div class="app-hero__head" data-reveal>
+          <span class="app-icon app-icon--lg app-icon--daf" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 13v-2M7.5 15.5v-7M11 18v-12M14.5 15.5v-7M18 13v-2"/>
+            </svg>
+          </span>
+          <div>
+            <h1>PowerDAF</h1>
+            <p class="app-hero__sub">Delayed-feedback speech practice for stuttering</p>
+          </div>
+        </div>
+
+        <p class="lead" data-reveal style="--d:80ms">
+          PowerDAF is a speech practice app for people who stutter. Speak into your iPhone and hear
+          your own voice in your headphones a fraction of a second later — delayed auditory
+          feedback, or DAF. Around it sit speech techniques, breathing, reading aloud and a minute
+          to get ready before you talk. It complements work with a speech therapist; it does not
+          replace it.
+        </p>
+
+        <div class="chips" style="margin-top:22px;--d:120ms" data-reveal>
+          <span class="chip">Free to download</span>
+          <span class="chip">One-time Pro, no subscription</span>
+          <span class="chip">No account</span>
+          <span class="chip">No tracking</span>
+          <span class="chip">8 languages</span>
+          <span class="chip">iPhone · iOS 18+</span>
+        </div>
+
+        <div class="btn-row" style="margin-top:30px;--d:160ms" data-reveal>
+          <!-- AUTHOR: not a link on purpose. PowerDAF has no Apple ID yet, and a store
+               button pointing at a listing that does not exist is a 404. Once App Store
+               Connect assigns the ID, replace this <span> with the <a class="btn btn--store
+               btn--lg"> from /justcleaner/index.html, pointing at
+               https://apps.apple.com/app/id<APPLE_ID>, change the small line back to
+               "Download on the", and add installUrl and offers to the JSON-LD above. -->
+          <span class="btn btn--store btn--lg" style="pointer-events:none;opacity:.72">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.7ZM14.2 5.6c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 0 2.1-.5 2.7-1.3Z"/></svg>
+            <span><small>Coming soon to the</small><b>App Store</b></span>
+          </span>
+          <a class="btn btn--ghost btn--lg" href="#how">How it works</a>
+        </div>
+      </div>
+
+      <div class="phone-stage" data-reveal style="--d:200ms" aria-hidden="true">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="screen-ui">
+              <span class="screen-ui__label">Speech</span>
+              <div class="eject-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 13v-2M7.5 15.5v-7M11 18v-12M14.5 15.5v-7M18 13v-2"/>
+                </svg>
+              </div>
+              <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="screen-ui__title">50 ms</div>
+              <p class="screen-ui__hint">Your own voice, a moment later, in your headphones</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Delayed auditory feedback</span><span>Pitch shift</span><span>Masking noise</span><span>10 speech techniques</span>
+    <span>Reading aloud</span><span>Breathing</span><span>No fluency score</span><span>No account</span>
+    <span>Delayed auditory feedback</span><span>Pitch shift</span><span>Masking noise</span><span>10 speech techniques</span>
+    <span>Reading aloud</span><span>Breathing</span><span>No fluency score</span><span>No account</span>
+  </div>
+</div>
+
+<!-- how it works -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">How it works</span>
+      <h2 class="h2">Hear your own voice, a moment later</h2>
+      <p class="lead">
+        When you hear yourself back with a small delay, many people who stutter find that their
+        speech flows more smoothly while the delay is on. It does not help everyone, the effect
+        usually lasts only while DAF is on, it differs a lot from person to person, and for some it
+        fades with time — so PowerDAF lets you try it and find the settings that suit you.
+      </p>
+    </div>
+
+    <div class="steps">
+      <article class="card step" data-reveal>
+        <span class="step__n"></span>
+        <h3 class="h3">Put on headphones</h3>
+        <p>Live DAF needs headphones, and wired ones work best — Bluetooth adds a delay of its own, and the app tells you so. Through the iPhone speaker the microphone would pick its own sound back up, so the app will not start a session there.</p>
+      </article>
+      <article class="card step" data-reveal>
+        <span class="step__n"></span>
+        <h3 class="h3">Start a session and talk</h3>
+        <p>You hear your voice 50 ms later to begin with, adjustable from 0 to 300 ms, with optional pitch shift and masking noise. The session keeps running with the screen locked, and the app shows an estimate of the real delay at your ear.</p>
+      </article>
+      <article class="card step" data-reveal>
+        <span class="step__n"></span>
+        <h3 class="h3">Find what suits you</h3>
+        <p>Compare two delays by ear over a few short rounds, save the settings you like as presets, and afterwards note how speaking felt. That goes into a practice log — never a score.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- features -->
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head section-head--center" data-reveal>
+      <span class="eyebrow">Features</span>
+      <h2 class="h2">More than a delay slider</h2>
+    </div>
+
+    <div class="bento">
+      <article class="card feat span-3" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg>
+        </span>
+        <h3 class="h3">DAF, pitch shift and masking</h3>
+        <p>Delay from 0 to 300 ms, frequency-altered feedback that moves your voice up or down by as much as 12 semitones, and masking noise — including a masking-only mode. Six built-in presets, plus your own.</p>
+      </article>
+
+      <article class="card feat span-3" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/></svg>
+        </span>
+        <h3 class="h3">It stays on your iPhone</h3>
+        <p>No account, no ads, no analytics, no tracking and no third-party code. Live audio is processed in memory and never saved, a recording starts only when you tap record, and the app sends none of your data anywhere — it leaves the phone only in an export you make yourself, or in your own iPhone backup if you use one. The only connection the app makes is to Apple&rsquo;s App Store, for the Pro purchase.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 12h6"/></svg>
+        </span>
+        <h3 class="h3">Ten techniques</h3>
+        <p>Step-by-step sessions for easy onset, prolonged speech, light contact, speaking on the exhale, pausing and phrasing, pull-out, cancellation, preparatory set, voluntary stuttering and desensitisation.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4V5Z"/><path d="M20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6V5Z"/></svg>
+        </span>
+        <h3 class="h3">Reading aloud, paced</h3>
+        <p>27 passages in each language, from single sounds and tongue-twisters to longer texts and unscripted speech, with a phrase-by-phrase pacing guide. A speech-rhythm metronome runs from 30 to 160 beats a minute.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <h3 class="h3">Before talking</h3>
+        <p>One minute to get ready for a call, an order, meeting someone, speaking to a group or a hard conversation: breathing, releasing tension, the first word, the first phrase. No headphones needed.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V9M12 20V4M19 20v-7"/></svg>
+        </span>
+        <h3 class="h3">Into real life</h3>
+        <p>Plan one real situation, then note afterwards how it went. An avoidance diary and a situation ladder help you choose the next step at your own pace.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a3 3 0 1 0-3-3M3 16h14a3 3 0 1 1-3 3M3 12h17"/></svg>
+        </span>
+        <h3 class="h3">Calm</h3>
+        <p>Five breathing patterns, speech-muscle relaxation and 5-4-3-2-1 grounding. All free, and none of it needs headphones.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        </span>
+        <h3 class="h3">Progress without a score</h3>
+        <p>Minutes practised, practice days, a 14-day chart and how speaking felt. PowerDAF never counts stutters and gives no fluency score. Export the log as a JSON file to show your speech therapist.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- honest limits, headphones, languages -->
+<section class="section" id="good-to-know">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Good to know</span>
+      <h2 class="h2">What it is, and what it is not</h2>
+    </div>
+
+    <div class="bento">
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M12 11v5M9.5 13.5h5"/></svg>
+        </span>
+        <h3 class="h3">Not a medical device</h3>
+        <p>PowerDAF does not diagnose or treat anything, and it is not a cure for stuttering. It is a place to practise.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3 0 3-10 6-10s3 10 6 10 3-6 6-6"/></svg>
+        </span>
+        <h3 class="h3">Different for everyone</h3>
+        <p>DAF makes speaking easier for some people and not for others. Where it helps, the effect usually lasts while it is on, and for some people it fades over time.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.2c.6-.1 1.3-.2 2-.2 2.5 0 4 1.8 4 4.5"/></svg>
+        </span>
+        <h3 class="h3">Alongside a therapist</h3>
+        <p>It is meant to be used alongside a speech-language therapist: they choose the technique, and you rehearse it here. If stuttering began suddenly in adulthood, see a doctor first.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>
+        </span>
+        <h3 class="h3">Headphones for live DAF</h3>
+        <p>Only live DAF needs them. Breathing, the metronome, the techniques, reading aloud and &ldquo;Before talking&rdquo; all work through the speaker or in silence.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 9.5a3.5 3.5 0 0 1 0 5"/></svg>
+        </span>
+        <h3 class="h3">Look after your hearing</h3>
+        <p>The app limits its own output, but your iPhone&rsquo;s volume still decides how loud it is. Your voice should sound a little louder than usual, no more — and 10 to 20 minutes at a time is plenty.</p>
+      </article>
+
+      <article class="card feat" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>
+        </span>
+        <h3 class="h3">Eight languages</h3>
+        <p>English, Russian, German, French, Spanish, Italian, Portuguese (Brazil) and Arabic, right to left. Reading passages and metronome lines are written for each language, not translated, and the text follows your Dynamic Type setting, including the larger accessibility sizes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- free and pro -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Free and Pro</span>
+      <h2 class="h2">Almost everything is free</h2>
+      <p class="lead">No trial, no time limit, no daily cap. One optional purchase adds practice material; it does not make the free part any smaller.</p>
+    </div>
+
+    <div class="bento">
+      <article class="card feat span-3" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg>
+        </span>
+        <h3 class="h3">Free, with no time limit</h3>
+        <p>Live DAF, pitch shift and masking over their full range, all six presets and your own, all ten techniques, the whole reading library, &ldquo;Before talking&rdquo;, breathing, relaxation and grounding, the metronome, &ldquo;Into real life&rdquo;, the avoidance diary, the progress log and its export.</p>
+      </article>
+
+      <article class="card feat span-3" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        </span>
+        <h3 class="h3">PowerDAF Pro — one payment</h3>
+        <p>Your own texts: paste what you actually have to say and practise it syllable by syllable with the metronome, or phrase by phrase with the pacing guide. Plus situation rehearsals with the other person&rsquo;s lines — &ldquo;Introducing yourself&rdquo; is open to everyone. A one-time in-app purchase through Apple, shareable with Family Sharing. There is no subscription.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- legal -->
+<section class="section" id="legal">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Legal</span>
+      <h2 class="h2">Privacy policy &amp; terms of use</h2>
+      <p class="lead">The full documents that apply to the PowerDAF iOS app. Plain language, no surprises.</p>
+    </div>
+
+    <div class="legal-grid">
+      <a class="card legal-card" href="/powerdaf/privacy/" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        </span>
+        <h3 class="h3">Privacy Policy</h3>
+        <p>What we collect (nothing), what the microphone is used for, what stays on your iPhone and how to delete it, and how Apple&rsquo;s own reporting works.</p>
+        <span class="link-arrow">
+          Read the policy
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card legal-card" href="/powerdaf/terms/" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+        </span>
+        <h3 class="h3">Terms of Use</h3>
+        <p>Your licence to use the app, why it is not medical advice, safe use with headphones, the one-time purchase, and the usual legal limits.</p>
+        <span class="link-arrow">
+          Read the terms
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- support -->
+<section class="section" id="support">
+  <div class="wrap">
+    <div class="cta" data-reveal>
+      <span class="eyebrow">Support</span>
+      <h2 class="h2">Need a hand with PowerDAF?</h2>
+      <p class="lead">Send us your iPhone model, iOS version, the headphones you use and a short description. You do not need to tell us anything about your speech. We reply to every message.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary btn--lg" href="#" data-mail="moc.xednay@vomazimziza">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          Email support
+        </a>
+        <a class="btn btn--ghost btn--lg" href="/">Back to all apps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="/">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z" fill="#fff"/></svg>
+          </span>
+          PowerApps
+        </a>
+        <p>An independent iOS studio building small, private, ad-free utilities for iPhone and iPad.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>PowerDAF</h4>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Free and Pro</a>
+        <a href="#support">Support</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <a href="/powerdaf/privacy/">Privacy policy</a>
+        <a href="/powerdaf/terms/">Terms of use</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>PowerApps</h4>
+        <a href="/">Home</a>
+        <a href="/#apps">All apps</a>
+        <a href="#" data-mail="moc.xednay@vomazimziza" data-mail-text>azizmizamov@yandex.com</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span data-year>2026</span> PowerApps. All rights reserved.</span>
+      <span>PowerDAF is not affiliated with Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js?v=0e287be8" defer></script>
+</body>
+</html>
