@@ -30,14 +30,14 @@
        "installUrl": "https://apps.apple.com/app/id<APPLE_ID>",
        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "url": "https://apps.apple.com/app/id<APPLE_ID>" },
      price 0 means free to DOWNLOAD, which stays true with the Pro in-app purchase.
-     "iOS 14.0" is the app's deployment target (app/ios/Podfile, Runner project); the widget
+     "iOS 15.0" is the app's deployment target (app/ios/Podfile, Runner project); the widget
      alone needs iOS 17, and the page says so. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Compono",
-  "operatingSystem": "iOS 14.0 or later",
+  "operatingSystem": "iOS 15.0 or later",
   "applicationCategory": "EducationalApplication",
   "url": "https://powerapps.site/compono/",
   "description": "Learn the 3,000 most useful English words together with the phrases they live in, example sentences and memory hooks, explained in Uzbek, Russian, English, Turkish, Spanish, French or Portuguese, with spaced-repetition review.",
@@ -126,7 +126,7 @@
              repo (PowerApps-site/Compono-English) on 10 October 2026. "Free to download" and
              not "Free": there is one in-app purchase. "7 explanation languages" counts the
              gloss databases (app/lib/src/languages.dart), not the app's own screens, which
-             exist in fewer languages. "iOS 14+" is the app's deployment target; "iPhone" is
+             exist in fewer languages. "iOS 15+" is the app's deployment target; "iPhone" is
              the owner's decision for 1.0, and the Xcode project must be set to match it. -->
         <div class="chips" style="margin-top:22px;--d:120ms" data-reveal>
           <span class="chip">Free to download</span>
@@ -134,7 +134,7 @@
           <span class="chip">No account</span>
           <span class="chip">No ads, no tracking</span>
           <span class="chip">7 explanation languages</span>
-          <span class="chip">iPhone · iOS 14+</span>
+          <span class="chip">iPhone · iOS 15+</span>
         </div>
 
         <div class="btn-row" style="margin-top:30px;--d:160ms" data-reveal>
@@ -200,7 +200,7 @@
       <article class="card step" data-reveal>
         <span class="step__n"></span>
         <h3 class="h3">Pick your language</h3>
-        <p>On first launch you choose the language the explanations come in &mdash; Uzbek, Russian, English, Turkish, Spanish, French or Portuguese &mdash; and, if you want one, a time for a daily reminder.</p>
+        <p>On first launch you choose the language the explanations come in &mdash; Uzbek, Russian, English, Turkish, Spanish, French or Portuguese &mdash; and a time for a daily reminder (20:00 is preselected; <b>Not now</b> turns reminders off).</p>
       </article>
       <article class="card step" data-reveal>
         <span class="step__n"></span>
@@ -285,8 +285,8 @@
         <span class="feat__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>
         </span>
-        <h3 class="h3">A reminder and a widget, if you want them</h3>
-        <p>Choose a time and you get one reminder a day carrying a real phrase from your own queue &mdash; never a streak warning. Add the widget (iOS 17 or later) to your home screen or lock screen to glance at a phrase and its meaning. Both are optional, and both keep words flagged as rude or offensive out of sight.</p>
+        <h3 class="h3">A reminder and a widget, both optional</h3>
+        <p>The first-launch setup preselects a daily reminder at 20:00; pick another time or <b>Not now</b>, and change it any time in Settings. It comes only when reviews are due and you have not already studied that day, with a real phrase from your own queue and an estimate of the minutes it takes &mdash; never a count of reviews, never a streak warning. The widget (iOS 17 or later) is for your home screen or lock screen: a word and its phrase, and on the medium home-screen size the phrase&rsquo;s meaning. Flagged words, and phrases that contain one, never appear in either.</p>
       </article>
     </div>
   </div>
@@ -314,7 +314,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
         </span>
         <h3 class="h3">Real English, rude words included</h3>
-        <p>The vocabulary includes some everyday swearing and sexual words, because people use them. They are flagged in the content, and they never appear in a reminder or on the widget.</p>
+        <p>The vocabulary includes some everyday swearing and sexual words, because people use them. They are flagged in the content. Flagged words, and phrases that contain one, never appear in a reminder or on the widget; the meanings shown there are not filtered, so a word that is not flagged can still have a meaning that mentions a sensitive subject.</p>
       </article>
 
       <article class="card feat" data-reveal>
@@ -329,7 +329,7 @@
         <span class="feat__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 9 5 6M21 9l-5 6"/></svg>
         </span>
-        <h3 class="h3">No spoken audio</h3>
+        <h3 class="h3">No pronunciation recordings</h3>
         <p>Version 1.0 has no recordings of words being pronounced. Compono plays only two short sounds for right and wrong answers, and they follow your Ring/Silent switch.</p>
       </article>
 
@@ -346,7 +346,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
         </span>
         <h3 class="h3">iPhone, in portrait</h3>
-        <p>Compono 1.0 is made for iPhone, held upright, on iOS 14 or later. The home-screen and lock-screen widget needs iOS 17.</p>
+        <p>Compono 1.0 is made for iPhone, held upright, on iOS 15 or later. The home-screen and lock-screen widget needs iOS 17.</p>
       </article>
     </div>
   </div>
@@ -424,7 +424,7 @@
     <div class="cta" data-reveal>
       <span class="eyebrow">Support</span>
       <h2 class="h2">Need a hand with Compono?</h2>
-      <p class="lead">Send us your iPhone model, iOS version and a short description. If you found a mistake in a word, a translation or a sentence, tell us which word. We read every message.</p>
+      <p class="lead">Send us your iPhone model, iOS version and a short description. If you found a mistake in a word, a translation or a sentence, tell us which word. We read every message. Write to <a href="#" data-mail="moc.xednay@vomazimziza" data-mail-text style="text-decoration:underline">azizmizamov@yandex.com</a>.</p>
       <div class="btn-row">
         <a class="btn btn--primary btn--lg" href="#" data-mail="moc.xednay@vomazimziza">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
@@ -448,7 +448,7 @@
           </span>
           PowerApps
         </a>
-        <p>An independent iOS studio building small, private, ad-free utilities for iPhone and iPad.</p>
+        <p>An independent iOS studio building small, private, ad-free utilities for iPhone.</p>
       </div>
 
       <div class="footer__col">

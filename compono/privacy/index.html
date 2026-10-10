@@ -114,7 +114,13 @@
              it was written: the Privacy, Terms and website links in Settings > About (section
              06 says they open in the browser), the removal of iPad and landscape from the
              Xcode project (the app page says iPhone, portrait), and the App Privacy answers in
-             App Store Connect, which must read "Data Not Collected". -->
+             App Store Connect, which must read "Data Not Collected". Decided 10 October 2026
+             (owner), and now stated in 03, 04 and 05: the widget list is written to the App
+             Group on every open and every move to the background, whether or not a widget has
+             been added; the reminder is preselected at 20:00 and the permission prompt follows
+             the first-launch questions; the profile id is local-<microseconds>, not random; the
+             meanings on a reminder or the widget are not filtered, only flagged words and the
+             phrases containing them are. -->
         <article class="prose">
 
           <section id="overview" data-reveal>
@@ -179,12 +185,12 @@
                  table for "report a mistake" notes; nothing writes to it in 1.0, so it is not
                  listed. List it here the day a feature starts writing to it. -->
             <div class="kv">
-              <div class="kv__item"><b>Profile</b><span>One record: a random identifier made on your iPhone (it is not linked to you or to any account), when the record was created, the language you chose for the explanations and for the App&rsquo;s own screens, your daily limit of new cards, your reminder time (or none), an accessibility setting, and the <strong>year of birth</strong> the App asks for once, when you first open it. It also holds an &ldquo;analytics&rdquo; switch that is always off and that nothing reads: the App has no analytics.</span></div>
+              <div class="kv__item"><b>Profile</b><span>One record: an identifier the App makes on your iPhone from the time the record is created (it is not linked to you or to any account), that creation time, the language you chose for the explanations and for the App&rsquo;s own screens, your daily limit of new cards, your reminder time (or none), an accessibility setting, and the <strong>year of birth</strong> the App asks for once, when you first open it. It also holds an &ldquo;analytics&rdquo; switch that is always off and that nothing reads: the App has no analytics.</span></div>
               <div class="kv__item"><b>Learning record</b><span>One card for each meaning of a word, with its spaced-repetition state; and a log with one line for every answer you give: the time, the exercise, your rating, how long you took and, if you got it wrong, which option you chose. It holds no name and no text you typed &mdash; the only box you can type into is the search box on the Words screen, and what you search for is not stored.</span></div>
               <div class="kv__item"><b>Purchases</b><span>A note of whether Pro is held on this iPhone: which product, how it was obtained and when it was confirmed. No payment details &mdash; Apple handles those.</span></div>
               <div class="kv__item"><b>Appearance</b><span>Whether you chose light, dark or &ldquo;match phone&rdquo;, in a small settings file.</span></div>
               <div class="kv__item"><b>Content pack</b><span>A copy of the words, phrases, sentences and explanations that ship inside the App, kept in the App&rsquo;s Application Support folder and refreshed when the App updates. It is the App&rsquo;s content, not yours.</span></div>
-              <div class="kv__item"><b>Widget list (optional)</b><span>Only if you add the Compono widget to your home screen or lock screen: up to 24 words or phrases with their meanings, written by the App into a storage area shared between the App and its widget (an App Group on this iPhone) so that the widget can show them. It never contains a word flagged as rude or offensive.</span></div>
+              <div class="kv__item"><b>Widget list</b><span>Up to 24 items, each made of a word, a phrase it is used in, the phrase&rsquo;s meaning and the word&rsquo;s meaning. The App writes the list into a storage area shared between the App and its widget (an App Group on this iPhone) every time you open the App or leave it, whether or not you have added a widget; if you have, the widget reads the list from there. It stays on this iPhone and is removed when you delete the App. Words flagged as rude or offensive, and phrases that contain one, are never put in it.</span></div>
             </div>
             <p>
               The App adds no name, account or advertising identifier to any of it. The developer
@@ -207,10 +213,12 @@
               Compono asks for <strong>one permission</strong>, and you can refuse it:
             </p>
             <ul>
-              <li><strong>Notifications</strong> &mdash; asked only when you choose a time for a
-                  daily reminder, in the first-launch setup or later in
-                  <strong>Settings &rsaquo; Reminder</strong>. If you choose no reminder, the App
-                  never asks. See <a href="#notifications">section 05</a></li>
+              <li><strong>Notifications</strong> &mdash; the first-launch setup preselects a daily reminder
+                  at 20:00, and iOS shows its permission prompt right after the setup questions.
+                  If you choose <strong>Not now</strong> for the reminder, the App does not ask. If
+                  you later choose a time in <strong>Settings &rsaquo; Reminder</strong>, iOS asks
+                  then (it shows the prompt only once). See
+                  <a href="#notifications">section 05</a></li>
             </ul>
             <p>
               It does <strong>not</strong> ask for, and its <code>Info.plist</code> contains no
@@ -220,9 +228,8 @@
               rest of the App usable.
             </p>
             <p>
-              Two short answer sounds play on iOS&rsquo;s &ldquo;ambient&rdquo; audio session, so
-              they are silenced by the Ring/Silent switch and mix with whatever you are already
-              playing, and the App gives a light haptic tick when you change tabs. Neither needs a
+              Two short answer sounds are silenced by the Ring/Silent switch and mix with whatever
+              you are already playing, and the App gives a light haptic tick when you change tabs. Neither needs a
               permission, and the App records nothing.
             </p>
           </section>
@@ -230,18 +237,23 @@
           <section id="notifications" data-reveal>
             <h2><span class="num">05</span> Reminders and the widget</h2>
             <p>
-              Both are optional and stay off until you turn them on. They are visible on a locked
-              iPhone, so this is what they carry.
+              Both are optional. The first-launch setup preselects a daily reminder at 20:00 and
+              lets you choose another time or <strong>Not now</strong>; the widget appears only if
+              you add it. Both can be read on a locked iPhone, so this is what they carry.
             </p>
             <div class="kv">
-              <div class="kv__item"><b>Daily reminder</b><span>Scheduled by iOS on this iPhone &mdash; there is no push server and no notification server of ours. Each reminder carries a phrase from your own queue and its meaning; on a given day it may also say how many reviews are due. It is never a streak warning. It never shows a word flagged as rude or offensive.</span></div>
-              <div class="kv__item"><b>Widget</b><span>Rotates through the short list described in <a href="#device">section 03</a>, with each phrase&rsquo;s meaning, on the home screen or lock screen (it needs iOS 17 or later). It shows no counts and never a flagged word.</span></div>
+              <div class="kv__item"><b>Daily reminder</b><span>Scheduled by iOS on this iPhone &mdash; there is no push server and no notification server of ours. A reminder is sent only when reviews are due and you have not already studied that day, at the time you chose (times from 23:00 to 06:59 are not accepted). The first one says either &ldquo;One phrase today&rdquo;, with a phrase from your own queue, or &ldquo;Today&rsquo;s review is ready&rdquo;, followed by an estimate of how many minutes it will take: an estimate of time, never a count of cards or reviews. The days after it (up to 14 are scheduled ahead, and they are replaced each time you open the App) show the word as the title and a phrase with its meaning as the text, with no number; if you have already studied that day, the reminders start the next day in this form. It is never a streak warning. Words flagged as rude or offensive, and phrases that contain one, never appear in a reminder.</span></div>
+              <div class="kv__item"><b>Widget</b><span>Rotates through the list described in <a href="#device">section 03</a> on the home screen or lock screen (it needs iOS 17 or later). The medium home-screen widget shows a word, a phrase and the phrase&rsquo;s meaning; the small and lock-screen widgets show a word and a phrase only. It shows no counts. Words flagged as rude or offensive, and phrases that contain one, never appear on it.</span></div>
             </div>
             <p>
-              Anyone who can see your lock screen can read a reminder or a lock-screen widget while
-              it is shown. You can turn the reminder off in the App (<strong>Settings &rsaquo;
-              Reminder &rsaquo; Off</strong>) or in iOS under <strong>Settings &rsaquo;
-              Notifications &rsaquo; Compono</strong>, and remove the widget as you would any other.
+              Meanings are shown as written. A word that is not flagged can still have a meaning
+              that mentions a sensitive subject, so what a reminder or the widget shows is not
+              guaranteed to be free of one. Anyone who can see your lock screen can read a
+              reminder or a lock-screen widget while it is shown. You can change the time
+              (08:00, 13:00, 20:00 or another time) or turn the reminder off in the App
+              (<strong>Settings &rsaquo; Reminder</strong>) or in iOS under <strong>Settings
+              &rsaquo; Notifications &rsaquo; Compono</strong>, and remove the widget as you would
+              any other.
             </p>
           </section>
 
@@ -257,14 +269,14 @@
               through StoreKit, Apple&rsquo;s own purchase system, to show the price of Pro and to
               buy or restore it. Those requests carry nothing you did or learned in the App. There
               is no other network code in the App: no server of ours, no web views, no remote
-              fonts, audio, images or content, and no analytics, crash-reporting, advertising or
+              fonts or content, and no analytics, crash-reporting, advertising or
               attribution software.
             </p>
             <p>
-              The App is built with open-source libraries (Flutter, drift and SQLite,
-              flutter_local_notifications, home_widget, audioplayers, liquid_glass_widgets and
-              in_app_purchase). They run on your iPhone as part of the App, and none of them
-              collects data.
+              The App is built with open-source libraries, including Flutter, drift and
+              SQLite, flutter_local_notifications, home_widget, audioplayers,
+              liquid_glass_widgets, in_app_purchase, url_launcher, path_provider and timezone.
+              They run on your iPhone as part of the App, and none of them collects data.
             </p>
             <p>
               The App is distributed through the <strong>Apple App Store</strong>, and Apple

@@ -208,9 +208,11 @@
               <li>The vocabulary includes some everyday swearing and sexual words. They are taught as
                   words you will hear and read, not as encouragement to use them to insult or harass
                   anyone</li>
-              <li>They are flagged in the App&rsquo;s content, and they never appear in a reminder or
-                  on the widget, which anyone looking at your iPhone can read. Inside the App they are
-                  part of the course like any other word</li>
+              <li>They are flagged in the App&rsquo;s content. Flagged words, and phrases that
+                  contain one, never appear in a reminder or on the widget, which anyone looking at
+                  your iPhone can read. The meanings shown there are not filtered, so a word that is
+                  not flagged can still have a meaning that mentions a sensitive subject. Inside the
+                  App, flagged words are part of the course like any other word</li>
               <li>You are responsible for deciding whether the App suits you and anyone else who uses
                   your device. Please keep this in mind if a child uses your iPhone</li>
             </ul>
@@ -288,7 +290,7 @@
             <p>
               The App, its source code, design, user interface, icon, name and logo, and the content
               written for it &mdash; the explanations (glosses) in each language, the graded
-              sentences, the memory hooks and the image prompts &mdash; are owned by us and protected
+              sentences and the memory hooks &mdash; are owned by us and protected
               by copyright and other laws. This does not apply to the third-party materials in
               <a href="#third-party">section 10</a>, which stay under their own licences.
               "Compono" and "PowerApps" are the names we use for this app and its publisher; nothing
@@ -300,17 +302,21 @@
             </p>
           </section>
 
-          <!-- AUTHOR: this list must match Settings > About > Licences in
+          <!-- AUTHOR: the content and typeface rows must match Settings > About > Licences in
                app/lib/src/settings_screen.dart, which is where the attribution the licences
-               require actually lives. Change both together. -->
+               require actually lives. Change both together. The software-library row is NOT in
+               the app's Licences screen and is a "including" list, not a complete one (pubspec.yaml
+               also has drift_flutter, cupertino_icons and the local packages): do not say the app
+               carries it. -->
           <section id="third-party" data-reveal>
             <h2><span class="num">10</span> Third-party materials and their licences</h2>
             <p>
               Compono is built on the work of others. Their materials may have been selected,
               adapted and combined for use in the App, and they stay under their own licences:
               nothing in these Terms limits the rights those licences give you in the material
-              itself. The same attributions are in the App, under <strong>Settings &rsaquo; About
-              &rsaquo; Licences</strong>.
+              itself. The attributions for the headword list, senses, sentences, CEFR estimate and
+              typefaces are also in the App, under <strong>Settings &rsaquo; About &rsaquo;
+              Licences</strong>.
             </p>
             <div class="kv">
               <div class="kv__item"><b>Headword list</b><span>NGSL v1.2, licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</span></div>
@@ -318,10 +324,10 @@
               <div class="kv__item"><b>Example sentences</b><span>Tatoeba, released under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0</a> (public domain).</span></div>
               <div class="kv__item"><b>CEFR estimate</b><span>cefrpy, under the <a href="https://opensource.org/license/mit" target="_blank" rel="noopener noreferrer">MIT licence</a>.</span></div>
               <div class="kv__item"><b>Typefaces</b><span>Manrope and Lora, bundled with the App under the <a href="https://openfontlicense.org/" target="_blank" rel="noopener noreferrer">SIL Open Font License 1.1</a>.</span></div>
-              <div class="kv__item"><b>Software libraries</b><span>Flutter, drift and SQLite, flutter_local_notifications, home_widget, audioplayers, liquid_glass_widgets and in_app_purchase, all open source, each under its own licence.</span></div>
+              <div class="kv__item"><b>Software libraries</b><span>Including Flutter, drift and SQLite, flutter_local_notifications, home_widget, audioplayers, liquid_glass_widgets, in_app_purchase, url_launcher, path_provider and timezone, all open source, each under its own licence.</span></div>
             </div>
             <p>
-              The glosses, graded sentences, memory hooks and image prompts are original to Compono
+              The glosses, graded sentences and memory hooks are original to Compono
               (<a href="#ip">section 9</a>).
             </p>
           </section>
