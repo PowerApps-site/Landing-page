@@ -19,6 +19,9 @@ No build step, no dependencies. Plain HTML, one CSS file, one JS file.
 | `/powerdaf/` | `powerdaf/index.html` — app page |
 | `/powerdaf/privacy/` | `powerdaf/privacy/index.html` |
 | `/powerdaf/terms/` | `powerdaf/terms/index.html` |
+| `/compono/` | `compono/index.html` — app page |
+| `/compono/privacy/` | `compono/privacy/index.html` |
+| `/compono/terms/` | `compono/terms/index.html` |
 | any unknown path | `404.html` |
 
 Every app gets its own top-level folder with the same three pages.
@@ -57,7 +60,14 @@ a sentence that ships as a lie if you leave the default in place.
 - **App Store links** — both apps now carry their real Apple IDs
   (`id6809809538` for JustCleaner, `id6809789001` for ClearWay). Each URL only
   resolves once that app is published; until then the button 404s.
-- **Effective dates** in the legal pages (currently `8 September 2026`).
+- **Compono's App Store button** is deliberately not a link. Compono has no Apple ID
+  yet, so `compono/index.html` carries a dimmed, non-clickable "Coming soon to the App
+  Store" badge (`aria-disabled`, no `href`) instead of the generator's
+  `id0000000000` link. When App Store Connect assigns the ID, follow the AUTHOR comment
+  next to the badge: swap in the real link, add `installUrl` and `offers` to the JSON-LD,
+  and change the "Coming soon" tag on the home-page card.
+- **Effective dates** in the legal pages (currently `8 September 2026` for JustCleaner and
+  ClearWay, `26 September 2026` for PowerDAF, `10 October 2026` for Compono).
 - **Governing law** in `justcleaner/terms/index.html` §13 names the Republic of
   Uzbekistan, where the publisher is established. Change it if that ever moves.
   Keep the second paragraph: it preserves consumers' mandatory local rights, which
@@ -85,6 +95,12 @@ Two rules keep that from happening again.
 
 Before submitting to App Review, read the privacy page next to `Info.plist` and
 next to the App Privacy answers in App Store Connect, and make the three agree.
+
+The Compono pages are written against one file in the app's own repository,
+`docs/LEGAL-FACTS.md` (`PowerApps-site/Compono-English`), which lists what the binary does
+and, just as usefully, what is *not* true of it. Its header says when a line there changes
+the pages change in the same release. The AUTHOR comments in `compono/` name the app
+source files each section depends on.
 
 A third trap surfaced writing the ClearWay pages, and it is not covered by a
 `TODO`. The template's sections 08 and 09 are written on the premise that the app

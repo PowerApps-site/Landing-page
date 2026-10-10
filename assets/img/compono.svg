@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="cp-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#134a40"/>
+      <stop offset="1" stop-color="#0b2a20"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="15" fill="url(#cp-bg)"/>
+
+  <!-- Two halves of one ring, facing each other across a gap: a word and the company it keeps.
+       Geometry measured off the 1024 px App Icon: centre (32,32), radius 14.94, stroke 6.1. -->
+  <g fill="none" stroke-width="6.1" stroke-linecap="round">
+    <path d="M27.52 17.75A14.94 14.94 0 0 0 27.52 46.25" stroke="#d9a24c"/>
+    <path d="M36.48 17.75A14.94 14.94 0 0 1 36.48 46.25" stroke="#f8f6f0"/>
+  </g>
+</svg>
