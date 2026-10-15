@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="bb-bg" cx=".3" cy=".25" r=".95">
+      <stop offset="0" stop-color="#1f5c42"/>
+      <stop offset=".55" stop-color="#0a1f17"/>
+      <stop offset="1" stop-color="#05120d"/>
+    </radialGradient>
+    <linearGradient id="bb-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fae08f"/>
+      <stop offset=".5" stop-color="#d4b038"/>
+      <stop offset="1" stop-color="#9e781f"/>
+    </linearGradient>
+    <!-- The bite: three tooth marks out of the coin's top-right rim, as in BiteMask
+         (BudgetBite/Brand.swift in the app): angles -64, -42 and -20 degrees, tooth radius 0.23 r. -->
+    <mask id="bb-bite" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+      <rect width="64" height="64" fill="#fff"/>
+      <circle cx="40.87" cy="13.81" r="4.56" fill="#000"/>
+      <circle cx="47.04" cy="18.46" r="4.56" fill="#000"/>
+      <circle cx="51.02" cy="25.08" r="4.56" fill="#000"/>
+    </mask>
+  </defs>
+
+  <rect width="64" height="64" rx="15" fill="url(#bb-bg)"/>
+  <circle cx="32" cy="32" r="16" fill="#fae08f" opacity=".14"/>
+
+  <!-- A gold coin with a fork and knife struck into it and a bite taken out. -->
+  <g mask="url(#bb-bite)">
+    <circle cx="32" cy="32" r="19.84" fill="url(#bb-gold)"/>
+    <circle cx="32" cy="32" r="19.24" fill="none" stroke="#9e781f" stroke-width="1.2"/>
+    <circle cx="32" cy="32" r="16.4" fill="none" stroke="#fae08f" stroke-opacity=".85" stroke-width=".55"/>
+    <g fill="none" stroke="#0a1f17" stroke-opacity=".9" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24.6 22.6v5.2M27.6 22.6v5.2M30.6 22.6v5.2"/>
+      <path d="M24.6 27.8c0 2.1 1.3 3.1 3 3.1s3-1 3-3.1"/>
+      <path d="M27.6 30.9v10.6"/>
+    </g>
+    <path d="M39.3 22.3C36.6 23.2 35.3 26.6 35.4 31.2c0 .8.5 1.4 1.3 1.4h.4v8a1.05 1.05 0 0 0 2.1 0Z" fill="#0a1f17" fill-opacity=".9"/>
+  </g>
+</svg>

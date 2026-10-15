@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PowerApps — Small iOS apps that do one thing well</title>
-<meta name="description" content="PowerApps is an independent iOS studio. Focused, private, ad-free apps for iPhone and iPad — including PowerDAF, JustCleaner, ClearWay and Compono.">
+<meta name="description" content="PowerApps is an independent iOS studio. Focused, private, ad-free apps for iPhone and iPad — including PowerDAF, JustCleaner, ClearWay, Compono and BudgetBite.">
 <meta name="theme-color" content="#06070b">
 <link rel="canonical" href="https://powerapps.site/">
 <link rel="icon" href="/assets/img/favicon.svg?v=c518d18a" type="image/svg+xml">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/css/main.css?v=863576de">
+<link rel="stylesheet" href="/assets/css/main.css?v=88c21a85">
 <script src="/assets/js/theme-init.js?v=34f07e67"></script>
 
 <script type="application/ld+json">
@@ -65,6 +65,7 @@
       <a href="/justcleaner/">JustCleaner</a>
       <a href="/powerdaf/">PowerDAF</a>
       <a href="/compono/">Compono</a>
+      <a href="/budgetbite/">BudgetBite</a>
     </nav>
 
     <div class="nav__actions">
@@ -91,6 +92,7 @@
   <a href="/justcleaner/">JustCleaner</a>
   <a href="/powerdaf/">PowerDAF</a>
   <a href="/compono/">Compono</a>
+  <a href="/budgetbite/">BudgetBite</a>
 </div>
 
 <main>
@@ -130,11 +132,11 @@
         <div class="hero__meta" data-reveal style="--d:320ms">
           <span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            No data collection
+            No tracking
           </span>
           <span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            Works offline
+            No accounts
           </span>
           <span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
@@ -204,6 +206,20 @@
                 <p class="screen-ui__hint">Learned in its phrases, never alone</p>
               </div>
             </div>
+
+            <div class="phone-slide" data-phone-slide>
+              <div class="screen-ui">
+                <span class="screen-ui__label">BudgetBite</span>
+                <div class="eject-btn eject-btn--budgetbite">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 3v5a2.5 2.5 0 0 0 5 0V3M8.5 3v18"/>
+                    <path d="M18.2 3C15.4 4 14 7.6 14 11.8c0 .7.5 1.2 1.2 1.2h1v6.8a1 1 0 0 0 2 0Z" fill="currentColor" stroke="none"/>
+                  </svg>
+                </div>
+                <div class="screen-ui__title">Lunch for $15</div>
+                <p class="screen-ui__hint">The five best places near you, ranked for your budget</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -212,6 +228,7 @@
           <button class="phone-dot" type="button" data-phone-dot aria-label="ClearWay"></button>
           <button class="phone-dot" type="button" data-phone-dot aria-label="PowerDAF"></button>
           <button class="phone-dot" type="button" data-phone-dot aria-label="Compono"></button>
+          <button class="phone-dot" type="button" data-phone-dot aria-label="BudgetBite"></button>
         </div>
 
         <div class="phone-chip phone-chip--a">
@@ -232,9 +249,9 @@
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
     <span>No ads</span><span>No accounts</span><span>No tracking</span><span>Made for iOS</span>
-    <span>Offline first</span><span>Dark mode</span><span>Human support</span><span>Made for iPhone</span>
+    <span>Privacy first</span><span>Dark mode</span><span>Human support</span><span>Made for iPhone</span>
     <span>No ads</span><span>No accounts</span><span>No tracking</span><span>Made for iOS</span>
-    <span>Offline first</span><span>Dark mode</span><span>Human support</span><span>Made for iPhone</span>
+    <span>Privacy first</span><span>Dark mode</span><span>Human support</span><span>Made for iPhone</span>
   </div>
 </div>
 
@@ -251,8 +268,8 @@
         <div class="stat__label">Trackers &amp; ad SDKs</div>
       </div>
       <div class="stat">
-        <div class="stat__num"><span data-count="100" data-suffix="%">100%</span></div>
-        <div class="stat__label">On-device processing</div>
+        <div class="stat__num"><span data-count="0">0</span></div>
+        <div class="stat__label">Accounts to create</div>
       </div>
       <div class="stat">
         <div class="stat__num"><span data-count="16" data-suffix="+">16+</span></div>
@@ -389,6 +406,33 @@
         </div>
       </article>
 
+      <article class="card app-card" data-reveal>
+        <div class="app-card__top">
+          <span class="app-icon" aria-hidden="true">
+            <img src="/assets/img/budgetbite.svg?v=b5a3c464" alt="" width="62" height="62">
+          </span>
+          <div>
+            <h3 class="h3 app-card__name">BudgetBite <span class="tag tag--soon">Coming soon</span></h3>
+            <p class="app-card__desc">Pick a meal and a budget, and get the five best places to eat near you: real places from Apple Maps, picked by AI, with an estimated price per person and what to order.</p>
+          </div>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Food &amp; drink</span>
+          <span class="chip">Top 5 nearby</span>
+          <span class="chip">35 languages</span>
+          <span class="chip">No account</span>
+        </div>
+
+        <div class="app-card__foot">
+          <a class="link-arrow" href="/budgetbite/">
+            App page &amp; legal
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <span class="tag">iOS 26+</span>
+        </div>
+      </article>
+
       <article class="card app-card app-card--soon" data-reveal>
         <div class="app-card__top">
           <span class="app-icon app-icon--soon" aria-hidden="true">
@@ -435,7 +479,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
         </span>
         <h3 class="h3">Privacy is the default, not a setting</h3>
-        <p>Our apps do not collect personal data, do not require an account, and do not embed analytics or advertising SDKs. What happens on your device stays on your device — there is no server to send it to.</p>
+        <p>Our apps keep no personal data on any server of ours, do not require an account, and do not embed analytics or advertising SDKs. What happens on your device stays on your device. The one app with a server of ours, BudgetBite, sends it only what a search needs, and that server keeps none of it.</p>
       </article>
 
       <article class="card feat span-3" data-reveal>
@@ -459,7 +503,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/></svg>
         </span>
         <h3 class="h3">Built to work offline</h3>
-        <p>Each app does its job without a connection, except where the job needs one: ClearWay has to reach its DNS resolver, and any in-app purchase goes through the App Store. Airplane mode or a dead hotspot changes nothing for the rest.</p>
+        <p>Each app does its job without a connection, except where the job needs one: ClearWay has to reach its DNS resolver, BudgetBite has to search the map and ask its server to rank places, and any in-app purchase goes through the App Store. Airplane mode or a dead hotspot changes nothing for the rest.</p>
       </article>
 
       <article class="card feat" data-reveal>
@@ -481,7 +525,7 @@
       <h2 class="h2">Something broken? Something missing?</h2>
       <p class="lead">Tell us your device model, iOS version and what you expected to happen. We usually reply within two business days.</p>
       <div class="btn-row">
-        <a class="btn btn--primary btn--lg" href="#" data-mail="moc.xednay@vomazimziza">
+        <a class="btn btn--primary btn--lg" href="#" data-mail="etis.spparewop@troppus">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
           Email support
         </a>
@@ -528,7 +572,7 @@
 
       <div class="footer__col">
         <h4>Contact</h4>
-        <a href="#" data-mail="moc.xednay@vomazimziza" data-mail-text>azizmizamov@yandex.com</a>
+        <a href="#" data-mail="etis.spparewop@troppus" data-mail-text>support@powerapps.site</a>
         <a href="#support">Support</a>
       </div>
     </div>
