@@ -22,9 +22,9 @@ No build step, no dependencies. Plain HTML, one CSS file, one JS file.
 | `/compono/` | `compono/index.html` — app page |
 | `/compono/privacy/` | `compono/privacy/index.html` |
 | `/compono/terms/` | `compono/terms/index.html` |
-| `/budgetbite/` | `budgetbite/index.html` — app page |
-| `/budgetbite/privacy/` | `budgetbite/privacy/index.html` |
-| `/budgetbite/terms/` | `budgetbite/terms/index.html` |
+| `/coinbite/` | `coinbite/index.html` — app page |
+| `/coinbite/privacy/` | `coinbite/privacy/index.html` |
+| `/coinbite/terms/` | `coinbite/terms/index.html` |
 | any unknown path | `404.html` |
 
 Every app gets its own top-level folder with the same three pages.
@@ -69,11 +69,11 @@ a sentence that ships as a lie if you leave the default in place.
   `id0000000000` link. When App Store Connect assigns the ID, follow the AUTHOR comment
   next to the badge: swap in the real link, add `installUrl` and `offers` to the JSON-LD,
   and change the "Coming soon" tag on the home-page card.
-- **BudgetBite's App Store button** is not a link either, for the same reason, and its
+- **CoinBite's App Store button** is not a link either, for the same reason, and its
   page makes no price claim: the app has no in-app purchase, but its App Store price is
   the owner's decision.
 - **Effective dates** in the legal pages (currently `8 September 2026` for JustCleaner and
-  ClearWay, `26 September 2026` for PowerDAF, `10 October 2026` for Compono, `15 October 2026` for BudgetBite).
+  ClearWay, `26 September 2026` for PowerDAF, `10 October 2026` for Compono, `15 October 2026` for CoinBite).
 - **Governing law** in `justcleaner/terms/index.html` §13 names the Republic of
   Uzbekistan, where the publisher is established. Change it if that ever moves.
   Keep the second paragraph: it preserves consumers' mandatory local rights, which
@@ -117,10 +117,10 @@ and 05 now say plainly which operator sees the lookups. **If the next app makes
 any network request at all, those two sections are wrong by default and no
 placeholder will tell you.**
 
-BudgetBite is the first app here with a server of its own, and it is the README's
-warning made real. A search goes to the BudgetBite backend on Vercel, which passes parts
+CoinBite is the first app here with a server of its own, and it is the README's
+warning made real. A search goes to the CoinBite backend on Vercel, which passes parts
 of it to an AI service (OrcaRouter) and to Google Places. Privacy sections 02 to 04 list
-exactly which fields each one receives, read off `BudgetBite/Ranking.swift` and
+exactly which fields each one receives, read off `CoinBite/Ranking.swift` and
 `backend/api/rank.ts` in the app repository (`uzcyber/budgetbite`). If the backend's AI
 provider or model changes (`AI_BASE_URL`, `AI_MODELS` in Vercel), or a search starts
 sending one more field, section 03 is wrong until it is edited.
