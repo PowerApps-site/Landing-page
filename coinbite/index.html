@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CoinBite — The best places to eat near you, for your budget | PowerApps</title>
-<meta name="description" content="CoinBite finds real places to eat near you with Apple Maps, then AI picks the five that best fit your meal and budget, estimates what you'll spend and suggests what to order. No account, no ads, no tracking. Coming soon to the App Store.">
+<meta name="description" content="CoinBite finds real places to eat near you with Apple Maps, then AI picks the five that best fit your meal and budget, estimates what you'll spend and suggests what to order. 5 free AI searches, then an optional Premium subscription. No account, no ads, no tracking. Coming soon to the App Store.">
 <meta name="theme-color" content="#06070b">
 <link rel="canonical" href="https://powerapps.site/coinbite/">
 <link rel="icon" href="/assets/img/coinbite.svg?v=d4865a73" type="image/svg+xml">
@@ -26,9 +26,9 @@
 
 <!-- AUTHOR: no "offers" or "installUrl" below on purpose: CoinBite has no Apple ID yet. Once
      it is published, add both, as in /justcleaner/index.html. "iOS 26.0" is the deployment
-     target in project.yml in the app repo (uzcyber/budgetbite). The app has no in-app
-     purchase, but its App Store price is the owner's decision, so this page makes no price
-     claim; add one ("Free") only once the listing says so. -->
+     target in project.yml in the app repo (uzcyber/budgetbite). The app is free to download
+     with an optional auto-renewing subscription (Premium), so once it is published the Offer
+     is price 0, as for Compono: free to DOWNLOAD. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -120,12 +120,13 @@
         <!-- AUTHOR: every chip is a claim, checked against the app repo (uzcyber/budgetbite) on
              15 October 2026. "35 languages" counts AppLanguage in AppSettings.swift (English
              and 34 translations in Localizable.xcstrings); "33 currencies" counts
-             BudgetCurrency.supportedCodes in Currency.swift. "No in-app purchases": the app
-             links no StoreKit. "iPhone": TARGETED_DEVICE_FAMILY is 1 in project.yml. -->
+             BudgetCurrency.supportedCodes in Currency.swift. "5 free AI searches" is
+             Premium.freeSearchLimit in Premium.swift. "iPhone": TARGETED_DEVICE_FAMILY is 1 in
+             project.yml. -->
         <div class="chips" style="margin-top:22px;--d:120ms" data-reveal>
           <span class="chip">No account</span>
           <span class="chip">No ads, no tracking</span>
-          <span class="chip">No in-app purchases</span>
+          <span class="chip">5 free AI searches</span>
           <span class="chip">35 languages</span>
           <span class="chip">33 currencies</span>
           <span class="chip">iPhone · iOS 26+</span>
@@ -334,6 +335,37 @@
   </div>
 </section>
 
+<!-- free and premium -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Free and Premium</span>
+      <h2 class="h2">Five searches on us</h2>
+      <p class="lead">Free to download. Your first 5 searches get everything: AI picks, prices and Google ratings. After that, CoinBite still finds the closest places with Apple Maps, and Premium brings the rest back.</p>
+    </div>
+
+    <!-- AUTHOR: prices, periods and the yearly trial must match App Store Connect,
+         Config/CoinBite.storekit in the app repo and terms section 08. -->
+    <div class="bento">
+      <article class="card feat span-3" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg>
+        </span>
+        <h3 class="h3">Free: 5 AI searches, then Apple Maps</h3>
+        <p>Every iPhone gets 5 full searches, once: the AI&rsquo;s top five, a price per person, what to order and Google ratings. After that, searches show the closest places from Apple Maps, with directions and details, for free.</p>
+      </article>
+
+      <article class="card feat span-3" data-reveal>
+        <span class="feat__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 4.5 4L12 5l4.5 7L21 8l-2 11H5L3 8Z"/></svg>
+        </span>
+        <h3 class="h3">CoinBite Premium</h3>
+        <p>AI picks, price estimates and Google ratings on every search. US$0.99 a week, US$3.99 a month, or US$39.99 a year with a 7-day free trial. An auto-renewing subscription through Apple, which shows the price in your own currency; cancel any time in your iPhone&rsquo;s Settings.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- legal -->
 <section class="section" id="legal">
   <div class="wrap">
@@ -349,7 +381,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
         </span>
         <h3 class="h3">Privacy Policy</h3>
-        <p>What a search sends, to whom and why, what our server keeps (nothing about you), what the app stores on your iPhone, and how to turn it all off.</p>
+        <p>What a search sends, to whom and why, how Premium is checked, what our server keeps (nothing about you), what the app stores on your iPhone, and how to turn it all off.</p>
         <span class="link-arrow">
           Read the policy
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -361,7 +393,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
         </span>
         <h3 class="h3">Terms of Use</h3>
-        <p>Your licence to use the app, why its prices and suggestions are estimates, the third-party services and photos it relies on, and the usual legal limits.</p>
+        <p>Your licence to use the app, the free searches and how Premium renews and cancels, why its prices and suggestions are estimates, the third-party services and photos it relies on, and the usual legal limits.</p>
         <span class="link-arrow">
           Read the terms
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -409,6 +441,7 @@
         <a href="#features">Features</a>
         <a href="#how">How it works</a>
         <a href="#good-to-know">Good to know</a>
+        <a href="#pricing">Free and Premium</a>
         <a href="#support">Support</a>
       </div>
 

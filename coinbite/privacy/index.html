@@ -87,7 +87,7 @@
         <a href="#device">5. Data stored on device</a>
         <a href="#permissions">6. Permissions</a>
         <a href="#maps">7. Apple Maps and map apps</a>
-        <a href="#purchases">8. Purchases</a>
+        <a href="#purchases">8. Premium and purchases</a>
         <a href="#children">9. Children</a>
         <a href="#rights">10. Your rights</a>
         <a href="#transfers">11. International transfers</a>
@@ -120,7 +120,7 @@
              location with three decimal places, which Apple's definitions count as Precise
              Location, so declare Location > Precise Location for App Functionality, not linked
              to the user, not used for tracking; and the search details (meal, budget, food
-             preferences) as Other Data, likewise. If the app is changed to send two decimals,
+             preferences) as Other Data, likewise; with Premium, add Purchases > Purchase History (section 08). If the app is changed to send two decimals,
              that becomes Coarse Location. -->
         <article class="prose">
 
@@ -139,7 +139,9 @@
                 location with Apple Maps. To rank them, it sends our server the search itself
                 &mdash; the meal, your budget, any food preferences, the nearby places and a
                 location rounded to about 100 metres &mdash; and our server asks an AI service
-                and Google for the answer. Our server keeps no copy of any of it.
+                and Google for the answer. Our server keeps no copy of any of it. If you subscribe
+                to Premium, Apple handles the payment; the App shows our server Apple&rsquo;s signed
+                record of the subscription so the server can check it, and keeps no copy of that either.
               </p>
             </div>
             <p>
@@ -159,6 +161,7 @@
               <div class="kv__item"><b>Your search</b><span>The meal you picked, your budget and its currency, and the food preferences you have turned on (for example vegan or halal), if any.</span></div>
               <div class="kv__item"><b>Approximate location</b><span>Your latitude and longitude rounded to three decimal places, which is about 100 metres, and the name of the area (for example the city and region) that Apple Maps gives for it. Your exact location is not sent to us.</span></div>
               <div class="kv__item"><b>Time and language</b><span>The day of the week and the time on your iPhone, so a breakfast search at 8:00 is treated as one, and the name of the language the App is set to, so the suggestions come back in it.</span></div>
+              <div class="kv__item"><b>Premium or free search</b><span>With Premium, the App Store&rsquo;s signed record of your subscription: which plan, when it was bought and when it renews or ends, the country of your App Store, and the transaction numbers Apple gives it, one of which stays the same across renewals. Our server checks Apple&rsquo;s signature on it to confirm the subscription is real. It holds no name, email address or Apple Account. Without Premium, a search says instead that it is one of your 5 free searches.</span></div>
               <div class="kv__item"><b>Nearby places</b><span>Up to 20 places Apple Maps found around you: their names, kinds, addresses, distances from you and locations, and whether Apple Maps listed them for your meal or your food preferences. These are public places, not information about you.</span></div>
             </div>
             <p>
@@ -187,7 +190,7 @@
               they do not get your IP address or anything about your device.
             </p>
             <div class="kv">
-              <div class="kv__item"><b>Our server (Vercel)</b><span>The CoinBite server runs on <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel</a> (Vercel Inc., United States). It receives everything listed in <a href="#search">section 02</a>, plus your IP address, and uses them only to answer that one search.</span></div>
+              <div class="kv__item"><b>Our server (Vercel)</b><span>The CoinBite server runs on <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel</a> (Vercel Inc., United States). It receives everything listed in <a href="#search">section 02</a>, plus your IP address, and uses them only to answer that one search. The record of your Premium subscription stops there: it is not passed to the AI service or to Google.</span></div>
               <div class="kv__item"><b>AI service (OrcaRouter)</b><span>To pick the five places and write the suggestions, our server sends an AI model the search from <a href="#search">section 02</a>: the meal, the budget, the food preferences, the area name and rounded location, the day and time, the language, and each place&rsquo;s name, kind, distance and address. It goes through <a href="https://orcarouter.ai/privacy-policy" target="_blank" rel="noopener noreferrer">OrcaRouter</a> (Continuum AI Pte. Ltd., Singapore), which forwards it to the provider running the model, currently DeepSeek V4 Flash. OrcaRouter says it keeps no copy of what it forwards; the model&rsquo;s provider handles the request under its own terms.</span></div>
               <div class="kv__item"><b>Google Places</b><span>To show each pick&rsquo;s rating, our server asks Google for the ratings of places around the rounded location, and, for a pick it does not find there, searches Google by that place&rsquo;s name and location. Google receives no other part of your search, and its answer is not stored. Google handles these requests under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</span></div>
             </div>
@@ -215,10 +218,10 @@
               <li><strong>Logs.</strong> The server&rsquo;s log notes which AI model answered and,
                   when something fails, a short error description. It contains no part of your
                   search</li>
-              <li><strong>One counter.</strong> The only thing the server stores is a monthly count
-                  of how many rating requests it has made to Google, kept with
+              <li><strong>Counters.</strong> The only thing the server stores is a monthly count of
+                  how many rating requests it has made to Google, in all and for free searches, kept with
                   <a href="https://upstash.com/trust/privacy.pdf" target="_blank" rel="noopener noreferrer">Upstash</a>
-                  so it stays within a monthly limit. It holds a number and nothing else</li>
+                  so it stays within a monthly limit. They hold numbers and nothing else</li>
             </ul>
           </section>
 
@@ -232,11 +235,14 @@
                  if a feature ever saves them (history, favourites), add a row and revisit 04. -->
             <div class="kv">
               <div class="kv__item"><b>Settings</b><span>Your appearance (system, light or dark), the App&rsquo;s language, your currency choice, whether haptics are on, and your food preferences.</span></div>
+              <div class="kv__item"><b>Free searches</b><span>How many of your 5 free AI searches this iPhone has used, as a single number in the iOS Keychain, so that deleting and reinstalling the App doesn&rsquo;t start the count again. It is never sent anywhere.</span></div>
+              <div class="kv__item"><b>Subscription</b><span>iOS and the App Store keep the record of your Premium subscription on the iPhone, as they do for any app; the App reads it from there and doesn&rsquo;t store a copy of its own.</span></div>
               <div class="kv__item"><b>Searches</b><span>Not stored. Your location, the places found and the picks are held in memory while you use them and are gone when the App closes. There is no search history.</span></div>
             </div>
             <p>
               The developer never receives your settings, and they are removed when you delete the
-              App. If your iPhone backs up to iCloud or a computer, iOS includes them in the backup,
+              App; the free-search count stays in the Keychain, which is what it is for, until the
+              iPhone is erased. If your iPhone backs up to iCloud or a computer, iOS includes them in the backup,
               as it does for any app; that backup is handled by Apple or by your computer, not by us.
             </p>
           </section>
@@ -310,10 +316,23 @@
           </section>
 
           <section id="purchases" data-reveal>
-            <h2><span class="num">08</span> Purchases</h2>
+            <h2><span class="num">08</span> Premium and purchases</h2>
+            <!-- AUTHOR: the products are the three auto-renewable subscriptions in Premium.productIDs
+                 (CoinBite/Premium.swift). The signed transaction reaches only our server, which keeps
+                 none of it (backend/api/rank.ts, verifyPremium); App Privacy should still declare
+                 Purchases > Purchase History for App Functionality, not linked, no tracking. -->
             <p>
-              CoinBite has no in-app purchases, no subscription and no ads. It handles no payment
-              information of any kind.
+              CoinBite is free to download, with 5 free AI searches, and offers an optional
+              auto-renewing subscription, <strong>CoinBite Premium</strong>. It has no ads.
+            </p>
+            <p>
+              Premium is bought and managed through the App Store. Apple handles the payment, and your
+              payment details never reach the developer: we never see or receive your card number,
+              billing address or Apple Account credentials, and we receive no report from Apple that
+              identifies you personally. To give a search Premium features, the App sends our server
+              the App Store&rsquo;s signed record of your subscription (<a href="#search">section 02</a>),
+              which the server checks and then discards. Refunds and billing questions are handled by
+              Apple through your purchase history.
             </p>
           </section>
 
@@ -347,7 +366,11 @@
                   in <a href="#search">section 02</a></li>
               <li><strong>Turning food preferences off</strong>, in Settings or on the budget screen,
                   stops them being sent</li>
-              <li><strong>Deleting the App</strong> removes the settings it stored</li>
+              <li><strong>Deleting the App</strong> removes the settings it stored. The count of free
+                  searches used stays in the iPhone&rsquo;s Keychain until the iPhone is erased</li>
+              <li><strong>Your subscription</strong> is managed and cancelled in iOS under
+                  <strong>Settings &rsaquo; your name &rsaquo; Subscriptions</strong>, or from
+                  <strong>Settings &rsaquo; Premium</strong> in the App</li>
               <li>Copies of what Apple, OrcaRouter, the AI model&rsquo;s provider or Google process
                   under their own policies are a matter for them; we can tell you which requests
                   went where, as this page does</li>
