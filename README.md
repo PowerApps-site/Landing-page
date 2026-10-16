@@ -120,7 +120,7 @@ placeholder will tell you.**
 
 CoinBite is the first app here with a server of its own, and it is the README's
 warning made real. A search goes to the CoinBite backend on Vercel, which passes parts
-of it to an AI service (OrcaRouter) and to Google Places. Privacy sections 02 to 04 list
+of it to an AI service (OpenAI, called directly) and to Google Places. Privacy sections 02 to 04 list
 exactly which fields each one receives, read off `CoinBite/Ranking.swift` and
 `backend/api/rank.ts` in the app repository (`uzcyber/budgetbite`). If the backend's AI
 provider or model changes (`AI_BASE_URL`, `AI_MODELS` in Vercel), or a search starts

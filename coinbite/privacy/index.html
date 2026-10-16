@@ -102,7 +102,7 @@
           <h1 class="h1">Privacy Policy</h1>
           <div class="doc__meta">
             <span>Effective date: 15 October 2026</span>
-            <span>Last updated: 15 October 2026</span>
+            <span>Last updated: 16 October 2026</span>
             <span>Applies to: CoinBite for iOS</span>
           </div>
         </header>
@@ -193,7 +193,7 @@
             </p>
             <div class="kv">
               <div class="kv__item"><b>Our server (Vercel)</b><span>The CoinBite server runs on <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel</a> (Vercel Inc., United States). It receives everything listed in <a href="#search">section 02</a>, plus your IP address, and uses them only to answer that one search. The record of your Premium subscription stops there: it is not passed to the AI service or to Google.</span></div>
-              <div class="kv__item"><b>AI service (OrcaRouter)</b><span>To pick the five places and write the suggestions, our server sends an AI model the search from <a href="#search">section 02</a>: the meal, the budget, the food preferences, the area name and rounded location, the day and time, the language, and each place&rsquo;s name, kind, distance and address. It goes through <a href="https://orcarouter.ai/privacy-policy" target="_blank" rel="noopener noreferrer">OrcaRouter</a> (Continuum AI Pte. Ltd., Singapore), which forwards it to the provider running the model, currently DeepSeek V4 Flash. OrcaRouter says it keeps no copy of what it forwards; the model&rsquo;s provider handles the request under its own terms.</span></div>
+              <div class="kv__item"><b>AI service (OpenAI)</b><span>To pick the five places and write the suggestions, our server sends an AI model the search from <a href="#search">section 02</a>: the meal, the budget, the food preferences, the area name and rounded location, the day and time, the language, and each place&rsquo;s name, kind, distance and address. It goes straight to <a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noopener noreferrer">OpenAI</a> (OpenAI, L.L.C., United States), which runs the model, currently GPT-6 Luna, under its <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener noreferrer">API data controls</a>. OpenAI says it does not use what it receives through its API to train its models, and keeps it for up to 30 days to check for abuse, unless the law requires longer.</span></div>
               <div class="kv__item"><b>Google Places</b><span>To show each pick&rsquo;s rating, our server asks Google for the ratings of places around the rounded location, and, for a pick it does not find there, searches Google by that place&rsquo;s name and location. Google receives no other part of your search, and its answer is not stored. Google handles these requests under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</span></div>
             </div>
             <p>
@@ -375,7 +375,7 @@
               <li><strong>Your subscription</strong> is managed and cancelled in iOS under
                   <strong>Settings &rsaquo; your name &rsaquo; Subscriptions</strong>, or from
                   <strong>Settings &rsaquo; Premium</strong> in the App</li>
-              <li>Copies of what Apple, OrcaRouter, the AI model&rsquo;s provider or Google process
+              <li>Copies of what Apple, OpenAI or Google process
                   under their own policies are a matter for them; we can tell you which requests
                   went where, as this page does</li>
             </ul>
@@ -385,9 +385,8 @@
           <section id="transfers" data-reveal>
             <h2><span class="num">11</span> International transfers</h2>
             <p>
-              Our server runs on Vercel in the United States, OrcaRouter operates from Singapore with
-              providers in the United States, Japan, the European Union and elsewhere, and Google
-              and Apple run their services worldwide. A search can therefore be processed outside
+              Our server runs on Vercel and OpenAI handles the AI requests, both in the United States,
+              and Google and Apple run their services worldwide. A search can therefore be processed outside
               the country you are in. Each of these providers states in its privacy policy how it
               protects personal data transferred across borders, for example with the European
               Commission&rsquo;s Standard Contractual Clauses.
