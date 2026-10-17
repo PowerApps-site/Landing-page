@@ -104,7 +104,7 @@
           <h1 class="h1">Terms of Use</h1>
           <div class="doc__meta">
             <span>Effective date: 10 October 2026</span>
-            <span>Last updated: 15 October 2026</span>
+            <span>Last updated: 17 October 2026</span>
             <span>Applies to: Compono for iOS</span>
           </div>
         </header>
@@ -113,7 +113,7 @@
              (PowerApps-site/Compono-English) on 10 October 2026, and checked against
              app/lib/src/{purchases,access,settings_screen,word_widget}.dart and the reminder
              code in app/lib/main.dart. Sections 4 and 5 are the website's half of what the app
-             itself says (Settings > About > Licences, the plan and paywall screens): keep them
+             itself says (Settings > About, the plan and paywall screens): keep them
              in step, and keep them from promising anything an exam, a score or a guarantee
              would imply. When the app changes, change this page in the same release. -->
         <article class="prose">
@@ -161,7 +161,7 @@
               <li>Reverse engineer, decompile or disassemble the App, except where that restriction is prohibited by applicable law</li>
               <li>Modify the App or create derivative works based on it</li>
               <li>Extract the App&rsquo;s original content (<a href="#ip">section 9</a>) in bulk, or republish it or use it to build another product, except as the law allows. The third-party materials in <a href="#third-party">section 10</a> are not restricted by this: their own licences apply</li>
-              <li>Remove or obscure any copyright, trademark or other proprietary notice, including the licence attributions in the App</li>
+              <li>Remove or obscure any copyright, trademark or other proprietary notice, including the licence notices that come with the App or appear on this page</li>
               <li>Use the App in a way that breaks any applicable law or regulation</li>
               <li>Use the App, or what you learn in it, to harm, harass or disturb other people</li>
             </ul>
@@ -309,31 +309,35 @@
             </p>
           </section>
 
-          <!-- AUTHOR: the content and typeface rows must match Settings > About > Licences in
-               app/lib/src/settings_screen.dart, which is where the attribution the licences
-               require actually lives. Change both together. The software-library row is an
-               "including" list, not a complete one (pubspec.yaml also has drift_flutter,
-               cupertino_icons and the local packages); the full notices are in the app under
-               Settings > About > Licences > Software licences (Flutter's licence page). -->
+          <!-- AUTHOR: this section is where the attribution the licences require lives
+               (owner's decision of 17 October 2026): the app links here from Settings > About >
+               Terms of Use, which CC BY / BY-SA 4.0 section 3(a)(2) accepts. The rows must match
+               "Third-party material" in docs/LEGAL-FACTS.md; change both together. Build 2 of the
+               app also lists them in Settings > About > Licences; build 3 does not, so nothing
+               here may send a reader to that list. The software-library row is an "including"
+               list, not a complete one (pubspec.yaml also has drift_flutter, cupertino_icons and
+               the local packages); the full notices ship inside the app bundle (Flutter's NOTICES
+               file), with the two font licence texts. -->
           <section id="third-party" data-reveal>
             <h2><span class="num">10</span> Third-party materials and their licences</h2>
             <p>
               Compono is built on the work of others. Their materials were selected, adapted and
               combined for use in the App, as noted below, and they stay under their own licences:
               nothing in these Terms limits the rights those licences give you in the material
-              itself. The same attributions, with what we changed, are in the App under
-              <strong>Settings &rsaquo; About &rsaquo; Licences</strong>, and the notices of the
-              software libraries under <strong>Software licences</strong> there.
+              itself. This section is where they are credited, with what we changed; the App
+              opens this page from <strong>Settings &rsaquo; About &rsaquo; Terms of Use</strong>.
+              The licence notices of the software libraries and of the typefaces ship inside the
+              App itself.
             </p>
             <div class="kv">
-              <div class="kv__item"><b>Headword list</b><span>New General Service List (NGSL) by Browne, C., Culligan, B. &amp; Phillips, J., <a href="https://newgeneralservicelist.org" target="_blank" rel="noopener noreferrer">newgeneralservicelist.org</a>, licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Changed: words removed and added, and the order and levels set by Compono.</span></div>
+              <div class="kv__item"><b>Headword list</b><span>New General Service List (NGSL) by Browne, C., Culligan, B. &amp; Phillips, J., <a href="https://www.newgeneralservicelist.com/new-general-service-list" target="_blank" rel="noopener noreferrer">newgeneralservicelist.com</a>, licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Changed: words removed and added, and the order and levels set by Compono.</span></div>
               <div class="kv__item"><b>Senses and synonyms</b><span>Open English WordNet 2024, <a href="https://github.com/globalwordnet/english-wordnet" target="_blank" rel="noopener noreferrer">github.com/globalwordnet/english-wordnet</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Changed: the definitions are reworded for learners, and many synonyms are our own.</span></div>
               <div class="kv__item"><b>Example sentences</b><span>Tatoeba, <a href="https://tatoeba.org" target="_blank" rel="noopener noreferrer">tatoeba.org</a>, the sentences released under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0</a> (public domain).</span></div>
               <div class="kv__item"><b>CEFR estimate</b><span>cefrpy by Maksym Bielikov, <a href="https://github.com/Maximax67/cefrpy" target="_blank" rel="noopener noreferrer">github.com/Maximax67/cefrpy</a>, under the <a href="https://opensource.org/license/mit" target="_blank" rel="noopener noreferrer">MIT licence</a>. Changed: its level is compared with our own levels.</span></div>
               <div class="kv__item"><b>Word frequency</b><span>wordfreq by Robyn Speer, with SUBTLEX data by Marc Brysbaert et al., <a href="https://github.com/rspeer/wordfreq" target="_blank" rel="noopener noreferrer">github.com/rspeer/wordfreq</a>, data licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</span></div>
-              <div class="kv__item"><b>Sensitive-word flag</b><span>The LDNOOBW word list by Shutterstock, <a href="https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words" target="_blank" rel="noopener noreferrer">github.com/LDNOOBW</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Changed: four words added; it is used only to mark words as rude or offensive.</span></div>
-              <div class="kv__item"><b>Typefaces</b><span>Manrope (The Manrope Project Authors) and Lora (The Lora Project Authors), bundled with the App under the <a href="https://openfontlicense.org/" target="_blank" rel="noopener noreferrer">SIL Open Font License 1.1</a>.</span></div>
-              <div class="kv__item"><b>Software libraries</b><span>Including Flutter, drift and SQLite, flutter_local_notifications, home_widget, audioplayers, liquid_glass_widgets, in_app_purchase, url_launcher, path_provider and timezone, all open source, each under its own licence; their notices are in the App under Settings &rsaquo; About &rsaquo; Licences &rsaquo; Software licences.</span></div>
+              <div class="kv__item"><b>Sensitive-word flag</b><span>The LDNOOBW word list by Shutterstock, &copy; 2012&ndash;2020 Shutterstock, Inc., <a href="https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words" target="_blank" rel="noopener noreferrer">github.com/LDNOOBW</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Changed: four words added; it is used only to mark words as rude or offensive.</span></div>
+              <div class="kv__item"><b>Typefaces</b><span>Manrope (The Manrope Project Authors, <a href="https://github.com/googlefonts/manrope" target="_blank" rel="noopener noreferrer">github.com/googlefonts/manrope</a>) and Lora (The Lora Project Authors, <a href="https://github.com/cyrealtype/Lora-Cyrillic" target="_blank" rel="noopener noreferrer">github.com/cyrealtype/Lora-Cyrillic</a>), bundled with the App under the <a href="https://openfontlicense.org/" target="_blank" rel="noopener noreferrer">SIL Open Font License 1.1</a>, whose text ships with them. Changed: static weights cut from the variable fonts.</span></div>
+              <div class="kv__item"><b>Software libraries</b><span>Including Flutter, drift and SQLite, flutter_local_notifications, home_widget, audioplayers, liquid_glass_widgets, in_app_purchase, url_launcher, path_provider and timezone, all open source, each under its own licence; their licence notices ship inside the App.</span></div>
             </div>
             <p>
               The glosses (translations), the memory hooks, the example sentences we wrote and the
