@@ -70,7 +70,7 @@ a sentence that ships as a lie if you leave the default in place.
   next to the badge: swap in the real link, add `installUrl` and `offers` to the JSON-LD,
   and change the "Coming soon" tag on the home-page card.
 - **CoinBite's App Store button** is not a link either, for the same reason. Its page states the
-  Premium prices in US dollars (weekly $0.99, monthly $3.99, yearly $39.99 with a 7-day free
+  Premium prices in US dollars (weekly $1.99, monthly $4.99, yearly $39.99 with a 7-day free
   trial) and the 5 free AI searches, in the Free and Premium section and in terms §08. Those must
   match App Store Connect and `Config/CoinBite.storekit` in the app repo; change them together.
 - **Effective dates** in the legal pages (currently `8 September 2026` for JustCleaner and
