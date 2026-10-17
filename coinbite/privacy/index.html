@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — CoinBite | PowerApps</title>
-<meta name="description" content="Privacy policy for the CoinBite iOS app. No account, no ads, no analytics, no tracking. What a search sends, to whom and why, what our server keeps (nothing about you), and what the app stores on your iPhone.">
+<meta name="description" content="Privacy policy for the CoinBite iOS app. No account, no ads, no analytics, no tracking. What a search sends, to whom and why, what our server keeps (none of your searches), and what the app stores on your iPhone.">
 <meta name="theme-color" content="#06070b">
 <link rel="canonical" href="https://powerapps.site/coinbite/privacy/">
 <link rel="icon" href="/assets/img/coinbite.svg?v=d4865a73" type="image/svg+xml">
@@ -102,7 +102,7 @@
           <h1 class="h1">Privacy Policy</h1>
           <div class="doc__meta">
             <span>Effective date: 15 October 2026</span>
-            <span>Last updated: 16 October 2026</span>
+            <span>Last updated: 17 October 2026</span>
             <span>Applies to: CoinBite for iOS</span>
           </div>
         </header>
@@ -110,7 +110,7 @@
         <!-- AUTHOR: written on 15 October 2026 against the app repo (uzcyber/budgetbite):
              CoinBite/Ranking.swift (RankRequest: what a search sends), backend/api/rank.ts
              (userPrompt: what the AI receives; nearbyPlaces/addRatings: what Google receives;
-             isRateLimited: the IP address; reserveGoogleCall: the only thing stored),
+             isRateLimited: the IP address; reserveGoogleCall and premiumUsage: the only things stored),
              CoinBite/PlaceSearch.swift and FinderModel.swift (Apple Maps), MapsApp.swift
              (map apps), AppSettings.swift (what is stored on the iPhone) and project.yml
              (NSLocationWhenInUseUsageDescription, the only usage description). When any of them
@@ -207,7 +207,7 @@
           <section id="server" data-reveal>
             <h2><span class="num">04</span> What our server keeps</h2>
             <p>
-              <strong>Nothing about you.</strong> The server answers each search and forgets it: it
+              <strong>None of your searches.</strong> The server answers each search and forgets it: it
               writes no search, location, preference or result to any database, file or log.
             </p>
             <ul>
@@ -220,10 +220,15 @@
               <li><strong>Logs.</strong> The server&rsquo;s log notes which AI model answered and,
                   when something fails, a short error description. It contains no part of your
                   search</li>
-              <li><strong>Counters.</strong> The only thing the server stores is a monthly count of
-                  how many rating requests it has made to Google, in all and for free searches, kept with
-                  <a href="https://upstash.com/trust/privacy.pdf" target="_blank" rel="noopener noreferrer">Upstash</a>
-                  so it stays within a monthly limit. They hold numbers and nothing else</li>
+              <li><strong>Counters.</strong> The only things the server stores are counts, kept with
+                  <a href="https://upstash.com/trust/privacy.pdf" target="_blank" rel="noopener noreferrer">Upstash</a>:
+                  a monthly count of how many rating requests it has made to Google, in all and for free
+                  searches, so it stays within a monthly limit; and, with Premium, how many AI searches
+                  each subscription has made that day and that month, so Premium stays within the fair use
+                  in the <a href="/coinbite/terms/#price">Terms of Use</a>. A subscription&rsquo;s count is
+                  filed under a one-way code made from its transaction number with a secret key, so the
+                  number itself is never stored and the code can&rsquo;t be traced back to it; each count
+                  is deleted after at most 40 days. They hold numbers and nothing else</li>
             </ul>
           </section>
 
