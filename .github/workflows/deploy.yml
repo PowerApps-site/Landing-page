@@ -33,6 +33,13 @@ jobs:
       - name: Stamp asset URLs with their content hash
         run: node scripts/stamp-assets.mjs
 
+      # The page scaffold (templates/), the build scripts and the README are
+      # for whoever edits this repo, not for visitors: a published template
+      # full of {{APP_NAME}} placeholders reads like a real, broken page.
+      # Removed from this throwaway checkout only, after stamping used them.
+      - name: Keep authoring files off the site
+        run: rm -rf templates scripts README.md
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
