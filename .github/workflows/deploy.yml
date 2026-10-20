@@ -37,6 +37,27 @@ jobs:
       # for whoever edits this repo, not for visitors: a published template
       # full of {{APP_NAME}} placeholders reads like a real, broken page.
       # Removed from this throwaway checkout only, after stamping used them.
+      # <!-- AUTHOR: ... --> notes are instructions to whoever edits a page
+      # (what to keep in sync, what was deliberately left out). They are not
+      # for visitors, and in page source they read like leftovers.
+      - name: Strip authoring notes from the published HTML
+        run: |
+          node -e '
+            const fs = require("fs"), path = require("path");
+            const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => {
+              const p = path.join(d, e.name);
+              if (e.isDirectory()) return [".git", "node_modules", "templates"].includes(e.name) ? [] : walk(p);
+              return p.endsWith(".html") ? [p] : [];
+            });
+            let n = 0;
+            for (const f of walk(".")) {
+              const src = fs.readFileSync(f, "utf8");
+              const out = src.replace(/[ \t]*<!--\s*AUTHOR[\s\S]*?-->[ \t]*\n?/g, () => (n++, ""));
+              if (out !== src) fs.writeFileSync(f, out);
+            }
+            console.log(`stripped ${n} authoring notes`);
+          '
+
       - name: Keep authoring files off the site
         run: rm -rf templates scripts README.md
 
