@@ -55,6 +55,21 @@
         }
       });
     }
+
+    // The Apps menu: the button toggles it, a click elsewhere or Esc closes it.
+    document.querySelectorAll('[data-drop]').forEach(function (drop) {
+      var btn = drop.querySelector('button');
+      var setOpen = function (open) {
+        drop.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', String(open));
+      };
+      btn.addEventListener('click', function () { setOpen(!drop.classList.contains('is-open')); });
+      document.addEventListener('click', function (e) { if (!drop.contains(e.target)) setOpen(false); });
+      drop.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drop.classList.contains('is-open')) { setOpen(false); btn.focus(); }
+      });
+      drop.addEventListener('focusout', function (e) { if (!drop.contains(e.relatedTarget)) setOpen(false); });
+    });
   }
 
   /* ---------- Reveal on scroll ---------- */

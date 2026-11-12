@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/css/main.css?v=f172e640">
+<link rel="stylesheet" href="/assets/css/main.css?v=067e4a91">
 <script src="/assets/js/theme-init.js?v=34f07e67"></script>
 
 <script type="application/ld+json">
@@ -57,15 +57,38 @@
       PowerApps
     </a>
 
-    <nav class="nav__links nav__links--apps" aria-label="Main">
-      <a href="#apps">Apps</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__drop" data-drop>
+        <button class="nav__drop-btn" type="button" aria-expanded="false" aria-controls="nav-apps">
+          Apps
+          <svg class="nav__drop-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav__drop-menu" id="nav-apps">
+        <a href="/justcleaner/">
+          <span class="app-icon app-icon--aqua" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6.5 7.2 6.5 11a6.5 6.5 0 0 1-13 0c0-3.8 6.5-11 6.5-11Z"/><path d="M13.4 10.6 10 15.2h2.6L11 19.8l3.9-5.2h-2.7l1.2-4Z"/></svg></span>
+          <span><b>JustCleaner</b><small>Speaker cleaner</small></span>
+        </a>
+        <a href="/clearway/">
+          <span class="app-icon app-icon--road" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 4h4.8l4.6 16H5L9.6 4Z"/><path d="M12 6.5v2M12 11v2.5M12 16v3"/></svg></span>
+          <span><b>ClearWay</b><small>Private DNS, fewer ads</small></span>
+        </a>
+        <a href="/powerdaf/">
+          <span class="app-icon app-icon--daf" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-2M7.5 15.5v-7M11 18v-12M14.5 15.5v-7M18 13v-2"/></svg></span>
+          <span><b>PowerDAF</b><small>Speech practice</small></span>
+        </a>
+        <a href="/compono/">
+          <span class="app-icon" aria-hidden="true"><img src="/assets/img/compono.svg?v=c8c6bd28" alt="" width="34" height="34"></span>
+          <span><b>Compono <span class="tag tag--soon">Soon</span></b><small>English vocabulary</small></span>
+        </a>
+        <a href="/coinbite/">
+          <span class="app-icon" aria-hidden="true"><img src="/assets/img/coinbite.svg?v=d4865a73" alt="" width="34" height="34"></span>
+          <span><b>CoinBite <span class="tag tag--soon">Soon</span></b><small>Eat well on a budget</small></span>
+        </a>
+          <a class="nav__drop-all" href="#apps">All apps</a>
+        </div>
+      </div>
       <a href="#why">Why us</a>
       <a href="#support">Support</a>
-      <a href="/clearway/">ClearWay</a>
-      <a href="/justcleaner/">JustCleaner</a>
-      <a href="/powerdaf/">PowerDAF</a>
-      <a href="/compono/">Compono</a>
-      <a href="/coinbite/">CoinBite</a>
     </nav>
 
     <div class="nav__actions">
@@ -86,13 +109,13 @@
 
 <div class="mmenu" data-mmenu>
   <a href="#apps">Apps</a>
+  <a class="mmenu__sub" href="/justcleaner/">JustCleaner</a>
+  <a class="mmenu__sub" href="/clearway/">ClearWay</a>
+  <a class="mmenu__sub" href="/powerdaf/">PowerDAF</a>
+  <a class="mmenu__sub" href="/compono/">Compono</a>
+  <a class="mmenu__sub" href="/coinbite/">CoinBite</a>
   <a href="#why">Why us</a>
   <a href="#support">Support</a>
-  <a href="/clearway/">ClearWay</a>
-  <a href="/justcleaner/">JustCleaner</a>
-  <a href="/powerdaf/">PowerDAF</a>
-  <a href="/compono/">Compono</a>
-  <a href="/coinbite/">CoinBite</a>
 </div>
 
 <main>
@@ -584,6 +607,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=0e287be8" defer></script>
+<script src="/assets/js/main.js?v=18a6dc98" defer></script>
 </body>
 </html>
