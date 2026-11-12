@@ -102,7 +102,7 @@
           <h1 class="h1">Privacy Policy</h1>
           <div class="doc__meta">
             <span>Effective date: 15 October 2026</span>
-            <span>Last updated: 17 October 2026</span>
+            <span>Last updated: 12 November 2026</span>
             <span>Applies to: CoinBite for iOS</span>
           </div>
         </header>
@@ -138,7 +138,7 @@
                 no tracking, and it never asks who you are. To find places to eat, it uses your
                 location with Apple Maps. To rank them, it sends our server the search itself
                 &mdash; the meal, your budget, any food preferences, the nearby places and a
-                location rounded to about 100 metres &mdash; and our server asks an AI service
+                location rounded to about 100 metres &mdash; and our server asks OpenAI
                 and Google for the answer. Our server keeps no copy of any of it. If you subscribe
                 to Premium, Apple handles the payment; the App shows our server Apple&rsquo;s signed
                 record of the subscription so the server can check it, and keeps no copy of that either.
@@ -153,10 +153,14 @@
           <section id="search" data-reveal>
             <h2><span class="num">02</span> What a search sends</h2>
             <p>
-              The App contacts our server only when you tap <strong>Find places</strong> with
-              <strong>AI picks</strong> on. The first time, before anything is sent, it asks you,
-              saying what goes where; if you choose <strong>Not now</strong>, it shows the closest
-              places from Apple Maps and sends nothing. With AI picks on, each search sends our
+              The App contacts our server only to run a search with <strong>AI picks</strong> on
+              and, with Premium, to load a pick&rsquo;s photos when you open them. Before the first
+              such search, and before anything is sent, it asks you in a screen that names OpenAI
+              and Google, says what each does with your search and lists what is sent; if you choose
+              <strong>Don&rsquo;t Allow</strong>, it shows the closest places from Apple Maps and
+              sends nothing. It asks again after an update that changes who receives your search,
+              and turning <strong>Settings &rsaquo; AI picks</strong> on in the App shows the same
+              question; turning it off stops sending. With AI picks on, each search sends our
               server, over an encrypted (HTTPS) connection, only what it needs to rank the places:
             </p>
             <div class="kv">
@@ -164,7 +168,7 @@
               <div class="kv__item"><b>Approximate location</b><span>Your latitude and longitude rounded to three decimal places, which is about 100 metres, and the name of the area (for example the city and region) that Apple Maps gives for it. Your exact location is not sent to us.</span></div>
               <div class="kv__item"><b>Time and language</b><span>The day of the week and the time on your iPhone, so a breakfast search at 8:00 is treated as one, and the name of the language the App is set to, so the suggestions come back in it.</span></div>
               <div class="kv__item"><b>Premium or free search</b><span>With Premium, the App Store&rsquo;s signed record of your subscription: which plan, when it was bought and when it renews or ends, the country of your App Store, and the transaction numbers Apple gives it, one of which stays the same across renewals. Our server checks Apple&rsquo;s signature on it to confirm the subscription is real. It holds no name, email address or Apple Account. Without Premium, a search says instead that it is one of your 5 free searches.</span></div>
-              <div class="kv__item"><b>Nearby places</b><span>Up to 20 places Apple Maps found around you: their names, kinds, addresses, distances from you and locations, and whether Apple Maps listed them for your meal or your food preferences. These are public places, not information about you.</span></div>
+              <div class="kv__item"><b>Nearby places</b><span>Up to 20 places Apple Maps found around you: their names, kinds, addresses, distances from your rounded location and locations, and whether Apple Maps listed them for your meal or your food preferences. These are public places, not information about you.</span></div>
             </div>
             <p>
               A search sends <strong>no</strong> name, email address, phone number, Apple Account,
@@ -193,12 +197,30 @@
             </p>
             <div class="kv">
               <div class="kv__item"><b>Our server (Vercel)</b><span>The CoinBite server runs on <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel</a> (Vercel Inc., United States). It receives everything listed in <a href="#search">section 02</a>, plus your IP address, and uses them only to answer that one search. The record of your Premium subscription stops there: it is not passed to the AI service or to Google.</span></div>
-              <div class="kv__item"><b>AI service (OpenAI)</b><span>To pick the five places and write the suggestions, our server sends an AI model the search from <a href="#search">section 02</a>: the meal, the budget, the food preferences, the area name and rounded location, the day and time, the language, and each place&rsquo;s name, kind, distance and address. It goes straight to <a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noopener noreferrer">OpenAI</a> (OpenAI, L.L.C., United States), which runs the model, currently GPT-6 Luna, under its <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener noreferrer">API data controls</a>. OpenAI says it does not use what it receives through its API to train its models, and keeps it for up to 30 days to check for abuse, unless the law requires longer.</span></div>
-              <div class="kv__item"><b>Google Places</b><span>To show each pick&rsquo;s rating, our server asks Google for the ratings of places around the rounded location, and, for a pick it does not find there, searches Google by that place&rsquo;s name and location. With Premium, Google&rsquo;s answer also names up to ten photos of each pick, and when you open a pick&rsquo;s photos, our server fetches each photo you look at from Google by that name and passes it to the App without keeping it, so Google learns which photo was shown but not who you are or where. Google receives no other part of your search, and its answers are not stored. Google handles these requests under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</span></div>
+              <div class="kv__item"><b>AI service (OpenAI)</b><span>To pick the five places and write the suggestions, our server sends an AI model the search from <a href="#search">section 02</a>: the meal, the budget, the food preferences, the area name and rounded location, the day and time, the language, and each place&rsquo;s name, kind, distance and address. It goes straight to <a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noopener noreferrer">OpenAI</a> (OpenAI, L.L.C., United States), which runs the model, currently GPT-6 Luna, under its <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener noreferrer">API data controls</a>. OpenAI says it does not use what it receives through its API to train its models, and keeps it for up to 30 days to check for abuse, unless the law requires longer or it is needed to protect its services or others from harm.</span></div>
+              <div class="kv__item"><b>Google Places</b><span>To show each pick&rsquo;s rating, our server asks Google for the ratings of places around the rounded location, and, for a pick it does not find there, searches Google by that place&rsquo;s name and location. With Premium, Google&rsquo;s answer also names up to ten photos of each pick, and when you open a pick&rsquo;s photos, our server fetches each photo you look at from Google by that name and passes it to the App without keeping it, so Google learns which photo was shown but not who you are or where. Google receives no other part of your search, and its answers are not stored. Google handles these requests under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>, and the <a href="https://cloud.google.com/maps-platform/terms" target="_blank" rel="noopener noreferrer">Google Maps Platform Terms</a> also let it use them to provide and improve its own services.</span></div>
             </div>
             <p>
+              We confirm that each third party our server shares this information with gives it the
+              same or equal protection as this policy, for these reasons. <strong>Vercel</strong>,
+              which hosts the server, <strong>OpenAI</strong> and <strong>Upstash</strong>, which
+              stores only the counts in <a href="#server">section 04</a>, process what they receive
+              for us as service providers, under the data processing terms that are part of our agreement with
+              each: <a href="https://vercel.com/legal/dpa" target="_blank" rel="noopener noreferrer">Vercel&rsquo;s</a>,
+              which its Terms of Service incorporate,
+              <a href="https://openai.com/policies/data-processing-addendum/" target="_blank" rel="noopener noreferrer">OpenAI&rsquo;s</a>
+              and <a href="https://upstash.com/trust/dpa.pdf" target="_blank" rel="noopener noreferrer">Upstash&rsquo;s</a>.
+              They allow each to process it only on our instructions, and require each to keep it
+              confidential and secure. <strong>Google</strong> handles the requests it receives as an
+              independent controller, but in the Google Maps Platform Terms it has agreed with us to
+              Google&rsquo;s <a href="https://business.safety.google/controllerterms/" target="_blank" rel="noopener noreferrer">data protection terms</a>,
+              which require it to comply with data protection law, and what it receives, listed
+              above, includes nothing that identifies you.
+            </p>
+            <p>
               We do not sell or rent any of this information, we do not use it for advertising, and
-              we do not share it with anyone for any purpose other than answering your search. If
+              we share it only to answer your search; Google may also use the requests it receives
+              as described above. If
               the AI service cannot be reached, the App shows the closest places instead, ranked on
               your iPhone.
             </p>
@@ -216,7 +238,10 @@
                   memory, never on disk or in a log, and that memory is gone whenever the server
                   instance restarts. Vercel also limits the number of requests per IP address
                   before they reach the server, and processes the connection under its own privacy
-                  policy</li>
+                  policy. Vercel&rsquo;s platform also records each request (its time, the IP
+                  address and the address requested, which for a photo includes Google&rsquo;s name
+                  for that photo) in request logs it keeps for a short time; we look at them only
+                  to fix problems</li>
               <li><strong>Logs.</strong> The server&rsquo;s log notes which AI model answered and,
                   when something fails, a short error description. It contains no part of your
                   search</li>
@@ -241,7 +266,7 @@
                  results and locations are held in memory only and are gone when the App closes;
                  if a feature ever saves them (history, favourites), add a row and revisit 04. -->
             <div class="kv">
-              <div class="kv__item"><b>Settings</b><span>Your appearance (system, light or dark), the App&rsquo;s language, your currency choice, whether haptics are on, and your food preferences.</span></div>
+              <div class="kv__item"><b>Settings</b><span>The App&rsquo;s language, your currency choice, whether haptics are on, your food preferences, and your answer to the AI picks question.</span></div>
               <div class="kv__item"><b>Free searches</b><span>How many of your 5 free AI searches this iPhone has used, as a single number in the iOS Keychain, so that deleting and reinstalling the App doesn&rsquo;t start the count again. It is never sent anywhere.</span></div>
               <div class="kv__item"><b>Subscription</b><span>iOS and the App Store keep the record of your Premium subscription on the iPhone, as they do for any app; the App reads it from there and doesn&rsquo;t store a copy of its own.</span></div>
               <div class="kv__item"><b>Searches</b><span>Not stored. Your location, the places found and the picks are held in memory while you use them and are gone when the App closes. There is no search history.</span></div>
