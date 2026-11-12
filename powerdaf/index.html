@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PowerDAF — Delayed-feedback speech practice for stuttering | PowerApps</title>
-<meta name="description" content="PowerDAF is a speech practice app for people who stutter: live delayed auditory feedback through headphones, speech techniques, breathing and reading aloud. Coming soon to the App Store — free to download, with an optional one-time Pro purchase.">
+<meta name="description" content="PowerDAF is a speech practice app for people who stutter: live delayed auditory feedback through headphones, speech techniques, breathing and reading aloud. Free on the App Store, with an optional one-time Pro purchase.">
 <meta name="theme-color" content="#06070b">
 <link rel="canonical" href="https://powerapps.site/powerdaf/">
 <link rel="icon" href="/assets/img/powerdaf.svg?v=2e666234" type="image/svg+xml">
@@ -24,13 +24,6 @@
 <link rel="stylesheet" href="/assets/css/main.css?v=c4be9e93">
 <script src="/assets/js/theme-init.js?v=34f07e67"></script>
 
-<!-- AUTHOR: there is no "offers" or "installUrl" below on purpose. PowerDAF has no
-     Apple ID yet and is not offered anywhere, so an Offer would describe something
-     that does not exist. Once the app is published, add both, as in
-     /justcleaner/index.html:
-       "installUrl": "https://apps.apple.com/app/id<APPLE_ID>",
-       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "url": "https://apps.apple.com/app/id<APPLE_ID>" },
-     price 0 means free to DOWNLOAD, which stays true with the Pro in-app purchase. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,6 +33,8 @@
   "applicationCategory": "HealthApplication",
   "url": "https://powerapps.site/powerdaf/",
   "description": "Speech practice for people who stutter: live delayed auditory feedback through headphones, pitch shift, masking noise, speech techniques, breathing and reading aloud. A practice tool, not a medical device.",
+  "installUrl": "https://apps.apple.com/app/id6817826723",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "url": "https://apps.apple.com/app/id6817826723" },
   "publisher": { "@type": "Person", "name": "Azizbek Mizamov", "alternateName": "PowerApps", "url": "https://powerapps.site/" }
 }
 </script>
@@ -133,16 +128,10 @@
         </div>
 
         <div class="btn-row" style="margin-top:30px;--d:160ms" data-reveal>
-          <!-- AUTHOR: not a link on purpose. PowerDAF has no Apple ID yet, and a store
-               button pointing at a listing that does not exist is a 404. Once App Store
-               Connect assigns the ID, replace this <span> with the <a class="btn btn--store
-               btn--lg"> from /justcleaner/index.html, pointing at
-               https://apps.apple.com/app/id<APPLE_ID>, change the small line back to
-               "Download on the", and add installUrl and offers to the JSON-LD above. -->
-          <span class="btn btn--store btn--lg" style="pointer-events:none;opacity:.72">
+          <a class="btn btn--store btn--lg" href="https://apps.apple.com/app/id6817826723" rel="noopener">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.7ZM14.2 5.6c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 0 2.1-.5 2.7-1.3Z"/></svg>
-            <span><small>Coming soon to the</small><b>App Store</b></span>
-          </span>
+            <span><small>Download on the</small><b>App Store</b></span>
+          </a>
           <a class="btn btn--ghost btn--lg" href="#how">How it works</a>
         </div>
       </div>
