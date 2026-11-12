@@ -796,6 +796,14 @@ h1, h2, h3, h4 {
 .app-icon img { display: block; width: 100%; height: 100%; }
 
 .app-card__name { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+/* The app's name links to its page, and the link's ::after covers the whole card, so a
+   click anywhere on the card opens it. The footer link sits above that layer. */
+.app-card__link { transition: color .3s; }
+.app-card__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.app-card:hover .app-card__link { color: var(--brand-2); }
+.app-card__link:focus-visible { outline: none; }
+.app-card:has(.app-card__link:focus-visible) { outline: 2px solid var(--brand-2); outline-offset: 3px; }
+.app-card__foot .link-arrow { position: relative; z-index: 2; }
 .app-card__desc { color: var(--muted); font-size: .93rem; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 7px; }
